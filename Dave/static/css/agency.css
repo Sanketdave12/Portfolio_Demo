@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+@media (min-width: 992px){
+.ag_cont {
+  height: 120vh;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5vw;
+}
+.ag_container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 19% 77.5%;
+  grid-template-rows: auto;
+  grid-template-areas: "ag_left ag_right";
+}
+.main_head {
+  position: relative;
+  color: black;
+  top: 60%;
+  left: -21%;
+  transform: rotate(-90deg);
+  font-size: 6.5vw;
+  opacity: 0.3;
+  font-weight: bold;
+}
+.sub_head {
+  position: relative;
+  color: black;
+  top: 33%;
+  left: -6%;
+  transform: rotate(-90deg);
+  font-size: 1.5vw;
+}
+.ag_right {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "right_top"
+    "right_mid"
+    "right_bot";
+  grid-gap: 3vw;
+}
+.right_top {
+  margin-top: 9vw;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 15vw;
+}
+.right_top img{
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  height: 15vw;
+}
+.right_bot {
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 10vw;
+  width: 100%;
+  align-items: center;
+}
+.right_bot p{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3.7vw;
+  font-weight: 500;
+  font-size: 2.5vw;
+}
+.right_mid {
+  display: grid;
+  grid-template-columns: 23.5% 23.5% 50%;
+  grid-template-rows: 1fr;
+  grid-template-areas: "mid_left mid_mid mid_right";
+  grid-gap: 1vw;
+}
+.mid_left img{
+  width: 100%;
+  height: 20vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mid_mid img{
+  width: 100%;
+  height: 20vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mid_right {
+  text-align: justify;
+}
+.mid_right p{
+  font-size: 1.1vw;
+}
+.ag_cont_mobile {
+  display: none;
+  visibility: hidden;
+}
+}
+
+
+@media (min-width: 576px) and (max-width: 768px){
+/* HEADER PART IN HEADER.CSS FILE */
+  .horizontal {
+    visibility: hidden;
+    display: none;
+  }
+  .ag_cont {
+    display: none;
+    visibility: hidden;
+  }
+  .ag_cont_mobile {
+    display: inline-block;
+    visibility: visible;
+  }
+  .ag_container_mobile {
+    width: 100%;
+    object-fit: contain;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "ag_up_mobile"
+    "ag_down_mobile";
+  }
+  .ag_down_mobile{
+    margin-bottom: 2vw;
+  }
+  .main_head_mobile p{
+    /* position: relative; */
+    /* top: 10%; */
+    text-align: center;
+    margin-top: 15%;
+    color: black;
+    font-weight: bold;
+    transform: rotate(0deg);
+    font-size: 15vw;
+    opacity: 0.3;
+  }
+  .sub_head_mobile {
+    /* position: relative; */
+    color: black;
+    text-align: center;
+    transform: rotate(0deg);
+    font-size: 5vw;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+  .right_top_mobile {
+    margin-top: 5vw;
+    position: relative;
+    border: 1px solid black;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 220px;
+    margin-bottom: 2rem;
+  }
+  .right_bot_mobile {
+    background-color: black;
+    position: relative;
+    color: white;
+    text-align: center;
+    height: auto;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  .right_bot_mobile h1 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mid_left_mobile img{
+    border: 1px solid black;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 220px;
+    margin-bottom: 2rem;
+  }
+  .mid_mid_mobile img{
+    border: 1px solid black;
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 220px;
+    margin-bottom: 2rem;
+  }
+  .mid_right_mobile p{
+    text-align: justify;
+    position: relative;
+    margin-bottom: 2vw;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media (max-width: 576px){
+/* HEADER PART IN HEADER.CSS FILE */
+.horizontal {
+  visibility: hidden;
+  display: none;
+}
+.ag_cont {
+  display: none;
+  visibility: hidden;
+}
+.ag_cont_mobile {
+  display: inline-block;
+  visibility: visible;
+}
+.ag_container_mobile {
+  width: 100%;
+  object-fit: contain;
+  display: grid;
+  grid-template-columns:1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  "ag_up_mobile"
+  "ag_down_mobile";
+}
+.ag_down_mobile{
+  margin-bottom: 2vw;
+}
+.main_head_mobile p{
+  /* position: relative; */
+  /* top: 10%; */
+  text-align: center;
+  margin-top: 15%;
+  color: black;
+  font-weight: bold;
+  transform: rotate(0deg);
+  font-size: 15vw;
+  opacity: 0.3;
+}
+.sub_head_mobile {
+  /* position: relative; */
+  color: black;
+  text-align: center;
+  transform: rotate(0deg);
+  font-size: 5vw;
+  font-weight: 500;
+  opacity: 0.9;
+}
+.right_top_mobile{
+  margin-top: 5vw;
+  position: relative;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 220px;
+  margin-bottom: 2rem;
+}
+.right_top_mobile img{
+  /* margin-top: 5vw; */
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 220px;
+  object-fit: cover;
+  /* margin-bottom: 2rem; */
+}
+.right_bot_mobile {
+  background-color: black;
+  position: relative;
+  color: white;
+  text-align: center;
+  height: auto;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+.right_bot_mobile p {
+  text-align: center;
+  font-size: 7vw;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mid_left_mobile{
+  position: relative;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.mid_mid_mobile{
+  position: relative;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.mid_left_mobile img{
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+.mid_mid_mobile img{
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+.mid_right_mobile p{
+  text-align: justify;
+  position: relative;
+  margin-bottom: 2vw;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+}

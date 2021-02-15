@@ -1,0 +1,105 @@
+
+
+@media (max-width: 576px) {
+  .navbar_main, .main_agency, #testim{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .base_header_nav{
+    width: 100%;
+  }
+  .header .menu {
+    clear: both;
+    max-height: auto;
+    transition: max-height 0.2s ease-out;
+  }
+  .header .menu-btn:checked ~ .menu {
+    min-height: 100vh;
+  }
+  .header ul {
+    padding-right: 0vw;
+}
+  ul.menu1 li.active a {
+    background-color: black;
+    color: white;
+  }
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    background-color: black;
+    color: white;
+  }
+  .header a.logo {
+    color: white;
+    font-size: 7vw;
+    padding-left: 4vw;
+  }
+  .header .logo {
+    padding: 1px 1px;
+}
+  ul.menu.menu1 {
+    width: 100%;
+    text-align: center;
+  }
+  .header ul {
+    display: list-item;
+    margin: 0%;
+  }
+  /* .header .menu-btn:checked ~ .menu {
+    max-height: 600px;
+  } */
+  .header ul li a {
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+    padding: 0;
+  }
+  .header ul li {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+    min-height: 12.4vh;
+    text-align: center;
+  }
+  .header ul li a {
+    margin-right: 0px;
+  }
+  .header .menu-icon {
+    position: absolute;
+    right: 0;
+    padding: 5vw 4vw;
+  }
+  .header .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 3.5px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 30px;
+  }
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.header .menu-icon .navicon:before {
+  top: 9px;
+}
+.header .menu-icon .navicon:after {
+  top: -9px;
+}
+  .hrline{
+    visibility: hidden;
+    display: none;
+  }
+}
+
+

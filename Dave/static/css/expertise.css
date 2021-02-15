@@ -1,0 +1,331 @@
+ul {
+  float: right;
+  list-style: none;
+  overflow: hidden;
+  margin-top: 6%;
+  margin-right: 7.9%;
+  display: flex;
+}
+li a {
+  display: block;
+  padding: 0.6vw 1.9vw;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2vw;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+ul.menu2 li.active a {
+  background-color: rgb(177, 240, 4);
+  color: white;
+}
+.exp{
+  height: 12vw;
+}
+.selectdiv {
+  display: none;
+  visibility: hidden;
+}
+.exp_content{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.expertise-container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 17% 83%;
+  grid-template-rows: 1fr;
+  grid-template-areas: "exp-left exp-right";
+}
+
+/* expertise left part */
+.exp-left {
+  grid-area: exp-left;
+}
+
+.exp-left #expertise_heading {
+  position: absolute;
+  top: 62%;
+  left: -9.2%;
+  object-fit: contain;
+  font-size: 6.5vw;
+  opacity: 0.3;
+}
+
+.exp-left #expertise_heading h1 {
+  transform: rotate(-90deg);
+}
+
+/* sub-left part */
+.exp-left #expertise-page-heading-dm {
+  position: absolute;
+  top: 70%;
+  left: 3.2%;
+  opacity: 0.8;
+  transform: rotate(-90deg);
+  object-fit: contain;
+  font-size: 2vw;
+}
+.exp-left #expertise-page-heading-gaming {
+  position: absolute;
+  top: 70%;
+  opacity: 0.8;
+  left: 9.08%;
+  transform: rotate(-90deg);
+  object-fit: contain;
+  font-size: 2vw;
+}
+.exp-left #expertise-page-heading-logocreator {
+  position: absolute;
+  top: 70%;
+  opacity: 0.8;
+  left: 5.52%;
+  transform: rotate(-90deg);
+  object-fit: contain;
+  font-size: 2vw;
+}
+.exp-left #expertise-page-heading-seo {
+  position: absolute;
+  top: 68%;
+  opacity: 0.8;
+  left: 11.47%;
+  letter-spacing: 0.1vw;
+  transform: rotate(-90deg);
+  object-fit: contain;
+  font-size: 2vw;
+}
+.exp-left #expertise-page-heading-uiux {
+  position: absolute;
+  top: 68%;
+  opacity: 0.8;
+  left: 10.59%;
+  transform: rotate(-90deg);
+  object-fit: contain;
+  font-size: 2vw;
+}
+.exp-left #expertise-page-heading-wd {
+  position: absolute;
+  top: 70%;
+  opacity: 0.8;
+  left: 3.5%;
+  transform: rotate(-90deg);
+  object-fit: contain;
+  font-size: 2vw;
+}
+
+/* expertise right part */
+.exp-right {
+  grid-area: exp-right;
+  display: grid;
+  object-fit: contain;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "exp-right-up"
+    "exp-right-down";
+}
+
+#exp-right-up {
+  /* position: relative; */
+  grid-area: exp-right-up;
+  display: grid;
+  object-fit: contain;
+  grid-template-columns: 35% 62%;
+  grid-template-rows: auto;
+  grid-template-areas: "exp-right-up-left exp-right-up-right";
+  grid-gap: 1.5rem;
+  /* margin-right: 7%; */
+  /* margin-bottom: 5rem; */
+}
+
+/* #exp-right-up-left{
+grid-area: exp-right-up-left;
+object-fit: contain;
+} */
+
+#exp-right-up-left img {
+  width: 25vw;
+  height: auto;
+}
+
+#exp-right-up-right {
+  grid-area: exp-right-up-right;
+  object-fit: contain;
+}
+
+#exp-right-up-right p {
+  text-align: justify;
+  font-size: 1vw;
+}
+
+#exp-right-down {
+  margin-top: auto;
+  margin-bottom: auto;
+  grid-area: exp-right-down;
+}
+
+#exp-right-down-poster {
+  width: 99.5%;
+  height: 130px;
+  border: 2px solid black;
+}
+.dm_mobile {
+  visibility: hidden;
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .body {
+    margin: 0;
+    padding: 0;
+  }
+  .horizontal {
+    visibility: hidden;
+    display: none;
+  }
+  ul.menu.menu2 {
+    display: none;
+    visibility: hidden;
+  }
+  .header li a {
+    width: 100%;
+    text-align: center;
+    margin-right: 0px;
+  }
+  .heading_mobile {
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 23%;
+    width: 100%;
+  }
+  .heading_mobile h1{
+    /* position: absolute; */
+    top: 0%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 15vw;
+    letter-spacing: 2px;
+    opacity: 0.3;
+  }
+  .exp {
+    visibility: hidden;
+    display: none;
+  }
+  .exp_content{
+    width: 91%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .block {
+    height: auto;
+    object-fit: contain;
+  }
+  .selectdiv {
+    visibility: visible;
+    display: inline;
+    position: absolute;
+    top: 35vw;
+    margin: 0% 5%;
+    border: 1px solid rgb(177, 240, 4);
+    /* margin-bottom: 10%; */
+  }
+
+  /* IE11 hide native button (thanks Matt!) */
+  select::-ms-expand {
+    display: none;
+  }
+  .selectdiv:after {
+    content: url("/static/images/dropdown.svg");
+    font: 17px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(0deg);
+    right: 4.1vw;
+    /*Adjust for position however you want*/
+    top: 4.1vw;
+    padding: 0 0 0vw;
+    border-bottom: 1px solid #999;
+    position: absolute;
+    pointer-events: none;
+  }
+  .selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 90vw;
+    height: 8vh;
+    float: right;
+    padding: 0px 24px;
+    font-size: 5vw;
+    color: #333;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    -ms-word-break: normal;
+    word-break: normal;
+  }
+  .exp-left #expertise_heading {
+    position: absolute;
+    top: 20%;
+    font-size: 25000px;
+  }
+  .home .btn1 {
+    object-fit: contain;
+    margin-top: 130%;
+    margin-left: -20%;
+  }
+  .home .btn1 a {
+    font-size: 3vw;
+    padding: 10px 15px;
+  }
+  .digital_marketing {
+    display: none;
+    visibility: hidden;
+  }
+  .dm_mobile {
+    visibility: visible;
+    display: inline;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+  }
+  .ex_container_mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "ex_up_mobile"
+      "ex_down_mobile";
+  }
+  /* .ex_up_mobile{
+    position: absolute;
+    top: 50%;
+  } */
+  .img_mobile,
+  .para_mobile,
+  .poster_mobile {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5vw;
+    width: 100%;
+  }
+  .img_mobile img,.poster_mobile img{
+    width: 100%;
+    height: auto;
+  }
+  .para_mobile p {
+    text-align: justify;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
+  .poster_mobile {
+    margin-bottom: 2rem;
+  }
+
+}

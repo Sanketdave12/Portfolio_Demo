@@ -1,0 +1,495 @@
+/* ################################################################################################################## */
+/* #################################### Desktop CSS Contact us section ############################################### */
+/* ################################################################################################################## */
+/* CONTACT US SECTION */
+.contact {
+  background-image: url("/static/images/img3.jpeg");
+  background-size: cover;
+  overflow: hidden;
+}
+.contact .container1 {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "left1 right1";
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+/* LEFT SIDE */
+.contact .container1 .left1 {
+  display: grid;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 45% 45%;
+  grid-template-areas:
+    "news auto"
+    "expfoot contfoot";
+  padding-top: 6vw;
+  padding-left: 15%;
+  justify-content: space-between;
+  object-fit: contain;
+}
+.contact .container1 .left1 h6 {
+  position: relative;
+  font-size: 1.5vw;
+  color: rgb(177, 234, 0);
+  margin-top: 10%;
+}
+.news {
+  font-size: 1.2vw;
+  grid-area: news;
+}
+.news .news-title {
+  color: rgb(177, 234, 0);
+  line-height: 2vw;
+  /* padding-bottom: 0.7vw; */
+}
+.expfoot {
+  grid-area: expfoot;
+}
+.expfoot .explist {
+  line-height: 1vw;
+  /* margin-top: 1.5vw; */
+}
+.expfoot p {
+  font-size: 1vw;
+  line-height: 2.5vw;
+}
+.contfoot {
+  grid-area: contfoot;
+  text-align: center;
+}
+
+/* RIGHT SIDE  */
+.contactform {
+  margin-left: 15%;
+}
+.contact .container1 .right1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+.right1 {
+  object-fit: contain;
+  padding-top: 6vw;
+  padding-right: 15%;
+}
+.right1 .contacttext #head1 {
+  position: relative;
+  color: rgb(177, 234, 0);
+  font-size: 2.6vw;
+  margin-top: 1vw;
+  margin-bottom: -2.7vw;
+}
+.right1 .contacttext #head2 {
+  position: relative;
+  color: white;
+  font-size: 7.5vw;
+  margin-bottom: -2vw;
+}
+.right1 .contacttext #head3 {
+  position: relative;
+  color: rgb(177, 234, 0);
+  font-size: 2.6vw;
+  margin-left: 73%;
+  margin-top: -8%;
+}
+.right1 .contactin {
+  position: relative;
+  margin-top: 4vw;
+}
+.right1 .contactin input {
+  width: 70%;
+  font-size: 1.2vw;
+  outline: none;
+  color: white;
+  padding: 0.5vw 1.5vw;
+  margin-bottom: 1.5vw;
+  border-top: 1px solid greenyellow;
+  background: linear-gradient(rgba(87, 87, 87, 0.45), rgba(87, 87, 87, 0.45));
+}
+.right1 .contactin input::placeholder {
+  font-size: 1vw;
+}
+.button_submit {
+  object-fit: contain;
+  padding: 0.7vw 2vw;
+  cursor: pointer;
+  font-size: 1.2vw;
+  background-color: rgb(177, 240, 1);
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+/* ################################################################################################################## */
+/* ################################################################################################################## */
+/* ################################################################################################################## */
+/* ################################################################################################################## */
+
+/* ################################################################################################################## */
+/* #################################### Mobile CSS Contact us section ############################################### */
+/* ################################################################################################################## */
+
+@media (min-width: 576px) and (max-width: 768px) {
+  /* CONTACT US */
+  .contact .container1 {
+   display: grid;
+   height: fit-content;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto 1fr;
+   grid-template-areas:
+     "right1"
+     "left1";
+ }
+
+ /* Right(UP) side */
+ .right1 {
+   object-fit: contain;
+   padding-bottom: 10%;
+ }
+ .right1 .contacttext #head1 {
+   position: relative;
+   font-size: 6vw;
+ }
+ .right1 .contacttext #head2 {
+   position: relative;
+   font-size: 15vw;
+ }
+ .right1 .contacttext #head3 {
+   position: relative;
+   font-size: 6vw;
+   /* right: 4%; */
+ }
+ .contactform{
+   margin-left: 0%;
+ text-align: center;
+ }
+
+ /* left(Bottom) side */
+ .container1 .right1 {
+   grid-area: right1;
+ }
+ .news,
+ .expfoot,
+ .contfoot {
+   border-top: 2px solid greenyellow;
+   padding-left: 5%;
+   padding-right: 5%;
+   padding-bottom: 5%;
+   padding-top: 5%;
+ }
+ .contact .container1 .left1 {
+   grid-area: left1;
+   height: auto;
+   display: grid;
+   margin: 0;
+   padding: 0;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto auto auto;
+   grid-template-areas:
+     "news"
+     "expfoot"
+     "contfoot";
+ }
+ .contact .container1 .left1 h6 {
+   position: relative;
+   margin-top: 0;
+   font-size: 5vw;
+ }
+ .contfoot {
+   text-align: left;
+ }
+ .button_submit {
+   object-fit: contain;
+   padding: 10px 25px;
+   cursor: pointer;
+   font-size: 2.5vw;
+   background-color: rgb(177, 240, 1);
+   color: white;
+   border: none;
+   font-weight: bold;
+ }
+ /* CONTACT US */
+ /* Right(UP) side */
+ .right1 {
+   object-fit: contain;
+   padding-bottom: 6vw;
+   padding-right: 0%;
+ }
+ .right1 .contacttext #head1 {
+   position: relative;
+   font-size: 7vw;
+   margin-bottom: -8vw;
+   right: 12%;
+ }
+ .right1 .contacttext #head2 {
+   position: relative;
+   font-size: 19vw;
+ }
+ .right1 .contacttext #head3 {
+   position: relative;
+   font-size: 7vw;
+   margin-left: 70vw;
+   top: 2%;
+ }
+ /* left(Bottom) side */
+ .container1 .right1 {
+   grid-area: right1;
+ }
+ .news,
+ .expfoot,
+ .contfoot {
+   border-top: 2px solid greenyellow;
+   padding-bottom: 5%;
+   padding-top: 5%;
+ }
+ .contact .container1 .left1 {
+   grid-area: left1;
+   height: auto;
+   display: grid;
+   margin: 0;
+   padding: 0;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto auto auto;
+   grid-template-areas:
+     "news"
+     "expfoot"
+     "contfoot";
+ }
+ .contact .container1 .left1 h6 {
+   position: relative;
+   margin-top: 0;
+   font-weight: 700;
+   font-size: 8vw;
+   letter-spacing: 2px;
+ }
+ .expfoot p {
+   font-size: 2vw;
+ }
+ .right1 .contactin{
+   margin-top: 5%;
+ }
+ .right1 .contactin input {
+   width: 80%;
+   font-size: 4.5vw;
+   outline: none;
+   color: white;
+   padding: 3vw 4.5vw;
+   margin-bottom: 4.5vw;
+   border-top: 1px solid greenyellow;
+   background: linear-gradient(rgba(87, 87, 87, 0.45), rgba(87, 87, 87, 0.45));
+ }
+ .right1 .contactin input::placeholder {
+   font-size: 3.5vw;
+ }
+ .contfoot {
+   text-align: left;
+ }
+ .news .news-title {
+   font-size: 4.5vw;
+ }
+ .news p {
+   font-size: 4vw;
+   line-height: 2rem;
+ }
+ .button_submit {
+   object-fit: contain;
+   padding: 2vw 8.5vw;
+   text-transform: uppercase;
+   cursor: pointer;
+   font-size: 5.5vw;
+   margin-top: 1vw;
+   background-color: rgb(177, 240, 1);
+   color: white;
+   border: none;
+   font-weight: bold;
+ }
+ .explist p {
+   font-size: 4vw;
+   line-height: 2rem;
+ }
+}
+
+@media (max-width: 576px) {
+   /* CONTACT US */
+   .contact .container1 {
+    display: grid;
+    height: fit-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "right1"
+      "left1";
+  }
+
+  /* Right(UP) side */
+  .right1 {
+    object-fit: contain;
+    padding-bottom: 10%;
+  }
+  .right1 .contacttext #head1 {
+    position: relative;
+    font-size: 6vw;
+  }
+  .right1 .contacttext #head2 {
+    position: relative;
+    font-size: 15vw;
+  }
+  .right1 .contacttext #head3 {
+    position: relative;
+    font-size: 6vw;
+    /* right: 4%; */
+  }
+  .contactform{
+    margin-left: 0%;
+  text-align: center;
+  }
+
+  /* left(Bottom) side */
+  .container1 .right1 {
+    grid-area: right1;
+  }
+  .news,
+  .expfoot,
+  .contfoot {
+    border-top: 2px solid greenyellow;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  .contact .container1 .left1 {
+    grid-area: left1;
+    height: auto;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "news"
+      "expfoot"
+      "contfoot";
+  }
+  .contact .container1 .left1 h6 {
+    position: relative;
+    margin-top: 0;
+    font-size: 5vw;
+  }
+  .contfoot {
+    text-align: left;
+  }
+  .button_submit {
+    object-fit: contain;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 2.5vw;
+    background-color: rgb(177, 240, 1);
+    color: white;
+    border: none;
+    font-weight: bold;
+  }
+  /* CONTACT US */
+  /* Right(UP) side */
+  .right1 {
+    object-fit: contain;
+    padding-bottom: 6vw;
+    padding-right: 0%;
+  }
+  .right1 .contacttext #head1 {
+    position: relative;
+    font-size: 7vw;
+    margin-bottom: -8vw;
+    right: 12%;
+  }
+  .right1 .contacttext #head2 {
+    position: relative;
+    font-size: 19vw;
+  }
+  .right1 .contacttext #head3 {
+    position: relative;
+    font-size: 7vw;
+    margin-left: 63vw;
+    top: 2%;
+  }
+  /* left(Bottom) side */
+  .container1 .right1 {
+    grid-area: right1;
+  }
+  .news,
+  .expfoot,
+  .contfoot {
+    border-top: 2px solid greenyellow;
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  .contact .container1 .left1 {
+    grid-area: left1;
+    height: auto;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "news"
+      "expfoot"
+      "contfoot";
+  }
+  .contact .container1 .left1 h6 {
+    position: relative;
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 8vw;
+    letter-spacing: 2px;
+  }
+  .expfoot p {
+    font-size: 2vw;
+  }
+  .right1 .contactin{
+    margin-top: 5%;
+  }
+  .right1 .contactin input {
+    width: 80%;
+    font-size: 4.5vw;
+    outline: none;
+    color: white;
+    padding: 3vw 4.5vw;
+    margin-bottom: 4.5vw;
+    border-top: 1px solid greenyellow;
+    background: linear-gradient(rgba(87, 87, 87, 0.45), rgba(87, 87, 87, 0.45));
+  }
+  .right1 .contactin input::placeholder {
+    font-size: 3.5vw;
+  }
+  .contfoot {
+    text-align: left;
+  }
+  .news .news-title {
+    font-size: 4.5vw;
+  }
+  .news p {
+    font-size: 4vw;
+    line-height: 2rem;
+  }
+  .button_submit {
+    object-fit: contain;
+    padding: 2vw 8.5vw;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 5.5vw;
+    margin-top: 1vw;
+    background-color: rgb(177, 240, 1);
+    color: white;
+    border: none;
+    font-weight: bold;
+  }
+  .explist p {
+    font-size: 4vw;
+    line-height: 2rem;
+  }
+}

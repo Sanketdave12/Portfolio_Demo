@@ -1,0 +1,197 @@
+{% extends 'base.html' %} {% block content %} {% load tz %} {% load static %} {% load social_share %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static './css/header.css' %}" />
+    <link rel="stylesheet" href="{% static './css/blogdetail.css' %}" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+
+  </head>
+
+  <body>
+    <section class="bgs_detail">
+      <div class="main_bgs">
+          <div class="bgs_heading">
+            <p>BLOG</p>
+          </div>
+          <div class="bgs_container">
+            <div class="bgs_content">
+              <div class="container">
+                <p class="blog_content">{{ blog.Content | safe}}</p>
+                <div class="commenthr">
+                  <hr>
+                </div>
+                <p class="comment_head">Comments:</p>
+                <div class="comment_box">
+                  <div class="add_comment_box">
+                    <button class="fadetoggle">Add Comment &nbsp;<i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                    <div class="form" style="display: none;">
+                      <form action="." method="post" class="post_comment_form">
+                        {{ comment_form.as_p }} {% csrf_token %}
+                        {{crispy}}
+
+                        <button type="submit" class="add_comm">SUBMIT</button>
+                      </form>
+                    </div>
+                  </div>
+
+                  <div class="commentreply_box">
+                    {% for comment in comments %}
+
+                    <div class="post_comment_bgs {% if forloop.counter > 2 %} hide_comment {% endif %}" >
+                      <div class="contact_name" data-aos="fade-up">
+                        <img src="{% static './images/comment.svg' %}" alt="">
+                        <p class="comment_name"> {{ comment.Name }}</p>
+                      </div>
+                        <p class="comment_date">{{ comment.Created}}</p>
+                        <div class="comment_body">
+                        <p class="">{{ comment.Body | linebreaks }}</p></div> {% for reply in comment.replies.all|slice:":" %}
+                        <div class="reply_div">
+                          <div class="reply_name">
+                            <img src="{% static './images/comment.svg' %}" alt="">
+                            <p class="r_name">{{ reply.Name }}</p>
+                          </div>
+                          <p class="reply_date">{{ reply.Created}}</p>
+                          <p class="r_body">{{ reply.Body }}</p>
+                        </div>
+
+
+                        {% endfor %}
+
+                        <div class="reply_div1">
+                          <p>
+                              <button class="reply" data-counter="{{ forloop.counter }}" type="button"data-toggle="collapse"
+                              data-target="#multiCollapseExample" aria-expanded="false" aria-controls="multiCollapseExample1">Reply</button>
+                          </p>
+                          <div class="reply_form" id="multiCollapseExample{{ forloop.counter }}" style="display: none;">
+                            <div class="reply_form_input">
+                              <form action="." method="post" class="comment_reply_form">
+                                {{ comment_form.as_p }} {% csrf_token %}
+                                <input type="hidden" name="Parent_id" value="{{comment.id}}" />
+                                <button class="add_reply" type="submit">SUBMIT</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                    </div>
+
+                  {% empty %}
+
+                    <h4>There is No Comments...</h4>
+
+                    {% endfor %}
+                    <button class="view_more" id="view_more">View More</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="bgs_contact">
+            <div class="bgs_contact_img">
+              <img src="{% static 'images/bgs_contact.png' %}" alt="" />
+            </div>
+            <div class="bgs_contact_contact_us">
+              <h1>CONTACT US</h1>
+            </div>
+            <div class="bgs_contact_newsletter">
+              <div class="bgs_sub_news">
+                <h1 id="bgs_sub">SUBSCRIBE</h1>
+                <p id="bgs_newsl">NEWSLETTER</p>
+              </div>
+              <form action="" method="POST" id="blog-form">
+                    {% csrf_token %}
+
+                  <div class="bgs_mail_inp">
+                    <input
+                      type="email"
+                      name="subscriberemail"
+                      id="bgs_mail_inp"
+                      placeholder="Enter your email ID....."
+                    />
+                  </div>
+                  <div class="bgs_submit_btn">
+                    <input id="bgs_sub_inp" type="submit" value="SUBMIT" />
+                  </div>
+              </form>
+            </div>
+            <div class="bgs_contact_category">
+              <div class="bg_search">
+                <form class="search_form" action="/search" method="GET">
+                     {% csrf_token %}
+                  <div class="inp">
+                    <input
+                      class="top_search"
+                      type="text"
+                      placeholder="Type here....."
+                      name="q"
+                    />
+                  </div>
+                  <div class="bgs_img_s">
+                    <button class="searchbtn" type="submit">
+                      <img src="{% static 'images/search.svg' %}" alt="" />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+
+            <div class="bgs_contact_latest_blog">
+              <h1 id="bgs_blog_heading">LATEST BLOGS</h1>
+              <hr id="bgs_line" />
+              <div class="bgs_blog_info">
+                {% for p in posts|slice:":3" %}
+                <a href="{% url 'blog:detail' slug=p.Slug %}"
+                  ><p class="news-title">{{p.Title}}</p></a
+                >
+                <hr class="bgs_line" />
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <script>
+      function shareMedia() {
+        let blur = document.getElementById("share_icon");
+        blur.classList.toggle("active");
+        let popup = document.getElementById("sharing_options");
+        popup.classList.toggle("active");
+        console.log("1st Image");
+      }
+    </script>
+    <script src="https://kit.fontawesome.com/d4d79b6b28.js" crossorigin="anonymous"></script>
+    <script src="{% static './js/blogdetail.js' %}"></script>
+    <script src="//cdn.ckeditor.com/4.15.1/full/ckeditor.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+    </script>
+    <script>
+      document.querySelector("#id_Name").placeholder = "Enter Your name";
+      document.querySelector("#id_Email").placeholder = "Enter Your Email";
+      document.querySelector("#id_Body").placeholder = "Enter Your Message";
+
+
+      jQuery(function ($) {
+        $('.reply_form').find('input').addClass('replyname');
+        $('#id_Name.replyname').attr('placeholder', 'Enter Your Name');
+        $('#id_Email.replyname').attr('placeholder', 'Enter Your Email');
+        $('.reply_form').find('textarea').addClass('replyname1');
+        $('.replyname1').attr('placeholder', 'Enter Your Message');
+
+      });
+
+    </script>
+  </body>
+
+</html>
+{% endblock %}

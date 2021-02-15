@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{% static './css/letsconnect.css' %}">
+    <script src="https://kit.fontawesome.com/71a148c206.js" crossorigin="anonymous"></script>
+    
+</head>
+<body >
+    <section class="letsconnect">
+        <div class="lc_container">
+            <div class="lc_heading">
+                <h1>LET'S&nbsp;&nbsp;CONNECT</h1>
+            </div> 
+            <div class="lc_connect">
+                <div class="lc_form">
+                    <div class="lc_form_heading">
+                        <h1 class="mid_heading">Write to us</h1>
+                    </div>
+                    <div class="lc_form_form">
+                        <form action="" method="POST" id="letsconnect-form">
+                            {% csrf_token %}
+                            <div class="div">
+                                <div id="f_name">
+                                    <label for="">FirstName <sup>*</sup></label><br>
+                                    <input name="firstname" class="namesame" type="text">
+                                </div>
+                                <div id="l_name">
+                                    <label for="">LastName <sup>*</sup></label><br>
+                                    <input name="lastname" class="namesame" type="text"><br>
+                                </div>
+                            </div>
+                            <label for="">Email <sup>*</sup></label><br>
+                            <input name="lc_email" class="same" type="email"><br>
+                            <label for="" required>Phone <sup>*</sup></label><br>
+                            <input name="lc_phone" class="same" type="phone"><br>
+                            <label for="">Your Message <sup>*</sup></label><br>
+                            <textarea name="lc_message" class="same" name="Message" id="" cols="30" rows="4"></textarea><br>
+                            <button class="lc_form_btn" type="submit">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+               <div class="lc_contact">
+                    <div class="lc_subhead">
+                        <p>CONTACT</p>
+                    </div>
+                    <div class="call_us">
+                        <div class="call_us_heading">
+                            <div>
+                                <img src="{% static './images/callicon.svg' %}" alt="">
+                            </div>
+                            <div class="callus">Call Us</div>
+                        </div>
+                        <a href="tel:+91 96240 85472" style="color: white;"><p class="lc_mobile">+91 96240 85472</p></a>
+                        <a href="tel:+91 96240 85472" style="color: white;"><p class="lc_mobile">+91 96240 85472</p></a>
+                    </div>
+                    <div class="mail_us">
+                        <div class="mail_us_heading">
+                            <div>
+                                <img src="{% static './images/mailicon.svg' %}" alt="">
+                            </div>
+                            <div class="mailus">Mail Us</div>
+                        </div>
+                        <a href="mailto:digitaldave@gmail.com" style="color: white;"><p class="lc_email">digitaldave@gmail.com</p></a>
+                    </div>
+                    <div class="lc_btn">
+                        <a href="https://wa.me/message/XDHC66XT6QHJA1">
+                            <img src="{% static './images/Wappicon.svg' %}" alt="">
+                        </a>
+                    </div>
+               </div>
+            </div>           
+        </div>
+    </section>
+    <section class="letsconnect_mobile">
+        <div class="lc_container_mobile">
+            <div class="lc_heading_mobile">
+                <p>LET'S&nbsp;&nbsp;CONNECT</p>
+            </div> 
+            <div class="lc_connect_mobile">
+                <div class="lc_form_mobile">
+                    <div class="lc_form_form_mobile">
+                        <form action="" method="POST" id="letsconnect-form">
+                            {% csrf_token %}
+                            <label for="">FirstName <sup>*</sup></label><br>
+                            <input name="firstname" class="same_mobile" type="text">
+                            <label for="">LastName <sup>*</sup></label><br>
+                            <input name="lastname" class="same_mobile" type="text"><br>
+                            <label for="">Email <sup>*</sup></label><br>
+                            <input name="lc_email" class="same_mobile" type="email"><br>
+                            <label for="" required>Phone <sup>*</sup></label><br>
+                            <input name="lc_phone" class="same_mobile" type="phone"><br>
+                            <label for="">Your Message <sup>*</sup></label><br>
+                            <textarea name="lc_message" class="same_mobile" name="Message" id="" cols="21" rows="4"></textarea><br>
+                            <div class="lc_mb">
+                                <button class="lc_form_btn_mobile" type="submit">SUBMIT</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="lc_contact_mobile">
+                <div class="lc_subhead_mobile">
+                    <p>CONTACT</p>
+                </div>
+                <div class="call_us_mobile">
+                    <div class="call_us_heading_mobile">
+                        <div class="callimage">
+                            <img src="{% static './images/callicon.svg' %}" alt="">
+                        </div>
+                        <div class="callus_mobile">
+                            <div class="callme">
+                                Call Us
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:+91 96240 85472" style="color: white;"><p class="lc_mobile_mobile">+91 96240 85472</p></a>
+                    <a href="tel:+91 96240 85472" style="color: white;"><p class="lc_mobile_mobile">+91 96240 85472</p></a>
+                </div>
+                <div class="mail_us_mobile">
+                    <div class="mail_us_heading_mobile">
+                        <div class="mailimage">
+                            <img src="{% static './images/mailicon.svg' %}" alt="">
+                        </div>
+                        <div class="mailus_mobile">
+                            <div class="mailme">
+                                Mail Us
+                            </div>
+                        </div>
+                    </div>
+                    <a href="mailto:digitaldave@gmail.com" style="color: white;"><p class="lc_email_mobile">digitaldave@gmail.com</p></a>
+                </div>
+                <div class="lc_btn_mobile">
+                    <a href="https://wa.me/message/XDHC66XT6QHJA1">
+                        <img src="{% static './images/Wappicon.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="foot_mobile"></div>
+
+        </div>
+    </section>
+
+    <script>
+        function submitForm() {
+            var frm = document.getElementsById('letsconnect-form')[0];
+            frm.submit(); 
+            frm.reset();
+            return false; 
+        }         
+    </script>
+</body>
+</html>
+{% endblock %}

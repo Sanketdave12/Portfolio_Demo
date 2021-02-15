@@ -1,0 +1,131 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="{% static './css/base.css' %}" />
+  <link rel="stylesheet" href="{% static './css/header.css' %}" />
+  <link rel="stylesheet" href="{% static './css/contact.css' %}" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <!-- <link rel="stylesheet" href="{% static 'css/expertise.css' %}"> -->
+</head>
+
+
+<body>
+    <div class="base_header_nav">
+  <!-- Navigation Bar -->
+  <header class="header">
+    <a href="/" class="text1 logo">LOGO</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    {% with request.resolver_match.url_name as url_name %}
+    <!-- {% with my_array="digital_marketing ui_ux gaming seo logo_creator web_development" %}
+        {% for i in my_array.split %}
+            {% if i in my_array.split %}
+            <li class="{% if url_name == '{{i}}' %} active {% endif %}"><a class="text1 expertise "
+                href="/expertise/{{i}}">EXPERTISE{{i}}</a></li>
+            {% endif %}
+        {% endfor%}
+    {% endwith %} -->
+    <ul class="menu menu1">
+      <li class="{% if url_name == 'home' %} active {% endif %}"><a class="text1 home "
+          href="/">HOME</a></li>
+      <li class="{% if url_name == 'expertise' %} active {% endif %}"><a class="text1 expertise"
+          href="/expertise/digital_marketing">EXPERTISE</a></li>
+      <li class="{% if url_name == 'agency' %} active {% endif %}"><a class="text1 agency"
+          href="/agency">AGENCY</a></li>
+      <li class="{% if url_name == 'portfolio' %} active {% endif %}"><a class="text1 portfolio"
+          href="/portfolio/photography">WORK</a></li>
+      <li class="{% if url_name == 'products' %} active1 {% endif %}"><a class="text1" href="/products">PRODUCTS</a></li>
+
+      <li class="{% if url_name == 'post' %} active {% endif %}"><a class="text1 post"
+          href="{%  url 'blog:post' %}">BLOG</a></li>
+      <li class="{% if url_name == 'letsconnect' %} active {% endif %}"><a class="text1 connect"
+          href="/letsconnect">LET'S CONNECT</a></li>
+    </ul>
+    {% endwith %}
+    <hr class="hrline">
+</header>
+</div>
+
+
+    {% block content %}
+    {% endblock %}
+
+    <div class="base_contact">
+    <section class="contact" id="connect">
+      <div class="container1">
+      <div class="left1">
+          <div class="news">
+          <h6>LATEST NEWS</h6>
+          <br>
+            {% for p in posts|slice:":2" %}
+                <a href="{% url 'blog:detail' slug=p.Slug %}"><p class="news-title">{{p.Title}}</p></a>
+                <p>{{p.Tag}}</p>
+                <br>
+            {% endfor %}
+          </div>
+          <div class="expfoot">
+          <h6>EXPERTISE</h6>
+          <div class="explist">
+              <p>DIGITAL MARKETING</p>
+              <p>DIGITAL MARKETING</p>
+              <p>DIGITAL MARKETING</p>
+              <p>DIGITAL MARKETING</p>
+              <p>DIGITAL MARKETING</p>
+          </div>
+          </div>
+          <div class="contfoot">
+          <h6>CONTACT US</h6>
+          </div>
+      </div>
+      <div class="right1">
+          <div class="contactform">
+          <div class="contacttext">
+              <h2 id="head1">DO YOU HAVE ANY </h2>
+              <h2 id="head2">START UP</h2>
+              <h2 id="head3">IDEA?</h2>
+          </div>
+          <div class="contactin">
+              <form action="/contact-me/" method="POST" id="contact-form">
+              {% csrf_token %}
+              <input type="text" name='name' placeholder="Enter your name"><br>
+              <input type="email" name='email' placeholder="Email Address"><br>
+              <input type="phone" name='phone' placeholder="Mobile Number"><br>
+              <input type="text" name='message' placeholder="Query"><br>
+               <input type="hidden" name="url" id="inp-url">
+              <button class="button_submit" type="submit" onclick="submitForm()">Submit</button>
+              </form>
+          </div>
+          </div>
+      </div>
+      </div>
+  </section>
+</div>
+
+<script>
+function submitForm() {
+    let x = window.location.href.split("/")[3];
+    let y = window.location.href.split("/")[4];
+    let inp = document.getElementById("inp-url");
+    if (y === "") {
+        inp.setAttribute("value", `/${x}`);
+    }
+    inp.setAttribute("value", `/${x}/${y}`);
+}
+
+        $(document).ready(function(){
+          $(".active").on("click",function(){
+              $("#menu-btn").prop("checked", false);
+          });
+      });
+      </script>
+
+
+</body>
+
+</html>

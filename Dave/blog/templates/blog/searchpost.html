@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/searchpost.css' %}">
+</head>
+
+<body>
+
+  <section class="blogpost">
+    <div class="bg_container">
+      <div class="bg_up">
+         <div class="bg_head">
+           <p>BLOG</p>
+         </div>
+         <div class="bg_content">
+            <div class="bg_search">
+              <form action="/search" method="GET" class="search_form">
+                   {% csrf_token %}
+                <div class="inp">
+                  <input class="top_search" type="text" placeholder="Type here....." name="q" required />
+                </div>
+                <div class="img_s">
+                  <button class="searchbtn" type="submit">
+                    <img src="{% static 'images/search.svg' %}" alt="" />
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="bg_post">
+              <div class="results">
+                {% if post|length < 1 %}
+                <div class="notfound">
+                  <p class="ur_search">Your search <strong>" {{title|truncatechars:85}} "</strong> did not match any term.</p>
+                  <p class="suggest">Suggestions:</p>
+                  <ul>
+                    <li class="sug_li">Make sure that all words are spelled correctly.</li>
+                    <li class="sug_li">Try different keywords.</li>
+                    <li class="sug_li">Try more general keywords.</li>
+                    <li class="sug_li">Try fewer keywords.</li>
+                  </ul>
+                </div>
+                {% else %}
+                <div class="search_for">
+                    <p class="search_result">Search results for <span class="span_s">' {{title}} '</span> </p>
+                </div>
+                <div class="row">
+                    <div class="bg_post">
+                      {% for data in post %}
+                      {% if forloop.counter0|divisibleby:3 %} <div class="row"> {% endif %}
+                        <div class="blog_card">
+                          <a style="color: black" href="{% url 'blog:detail' slug=data.Slug %}">
+                            <img class="blog_img" src="{{ data.Image.url }}" alt="{{data.Title}}" />
+                              <div class="post_tag">
+                                  <p>{{data.Tag}}</p>
+                              </div>
+                              <div class="img_blur">
+                                  <div class="post_title">
+                                    <h2>{{ data.Title }}</h2>
+                                  </div>
+                                  <div class="post_date">
+                                    <p>{{data.Date}}</p>
+                                  </div>
+                                  <div class="post_desc">
+                                    <p>
+                                      Lorem ipsum dolor sit amet consectetur adipisicing
+                                      elit. Ofcing elit. consectetur adipisicing elit.
+                                      Ofcing elit. Officiis ab est hi Officiis ab est hic
+                                      cum alias! Sit cum porro eligendi q id.Lorem ipsum
+                                      dolor sit amet
+                                    </p>
+                                  </div>
+                              </div>
+                          </a>
+                        </div>
+                      {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><br>{%  endif %}
+                      {% endfor %}
+                    </div>
+
+                </div>
+                {% endif %}
+
+              </div>
+            </div>
+
+            <div class="bg_post_mobile">
+              <div class="row ml-1">
+                {% if post|length < 1 %}
+                <div class="notfound_mobile">
+                  <p class="ur_search_mobile">Your search <strong>" {{title|truncatechars:85}} "</strong> did not match any term.</p>
+                  <p class="suggest_mobile">Suggestions:</p>
+                  <ul>
+                    <li class="sug_li_mobile">Make sure that all words are spelled correctly.</li>
+                    <li class="sug_li_mobile">Try different keywords.</li>
+                    <li class="sug_li_mobile">Try more general keywords.</li>
+                    <li class="sug_li_mobile">Try fewer keywords.</li>
+                  </ul>
+                </div>
+                {% else %}
+                <p class="search_result">Search results for <span class="span_s">' {{title}} '</span> </p>
+                <div class="bg_post_mobile">
+                  {% for data in post %}
+                  {% if forloop.counter0|divisibleby:2 %}
+                  <div class="row">
+                  {% endif %}
+                  <div class="blog_card_mobile">
+                    <a style="color: black" href="{% url 'blog:detail' slug=data.Slug %}">
+                      <img class="blog_img_mobile" src="{{ data.Image.url }}" alt="{{data.Title}}"/>
+                      <div class="post_tag_mobile">
+                        <p>{{data.Tag}}</p>
+                      </div>
+                      <div class="img_blur_mobile">
+                        <div class="post_title">
+                          <h2>{{ data.Title }}</h2>
+                        </div>
+                        <div class="post_date_mobile">
+                          <p>{{data.Date}}</p>
+                        </div>
+                        <div class="post_desc_mobile">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Ofcing elit. consectetur adipisicing elit.
+                            Ofcing elit. Officiis ab est hi Officiis ab est hic cum alias! Sit cum porro eligendi q id.Lorem ipsum
+                            dolor sit amet.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  {%  if forloop.counter|divisibleby:2 or forloop.last %}
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="bg_pagination">
+            {% if post %}
+            <ul class="pagination">
+              {% if post.has_previous %}
+
+                <div class="prev_icon">
+                  <li class="prev">
+                    <a href="?page={{post.previous_page_number}}" class="page-link"><img src="{% static 'images/page2.svg' %}" alt=""></a>
+                  </li>
+                </div>
+                {% endif %}
+                <div class="page_number">
+                  {% for num in post.paginator.page_range %}
+                    <ul>
+                      {% if posts.number == num %}
+                        <li class="active page-item"><a class="page-link active-page">{{num}}</a></li>
+                        {% elif num > post.number|add:'-3' and num < post.number|add:'3' %}
+                        <li class="page-item"><a class="page-link" href="?page={{num}}">{{num}}</a></li>
+                      {% endif %}
+                    </ul>
+                  {% endfor %}
+                </div>
+                {% if post.has_next %}
+                <div class="next_icon">
+                  <li class="next">
+                    <a href="?page={{post.next_page_number}}" class="page-link"><img src="{% static 'images/page1.svg' %}" alt=""></a>
+                  </li>
+                </div>
+                {% endif %}
+              </ul>
+            {% endif %}
+            </div>
+          </div>
+      </div>
+        <div class="bg_mail">
+          <div class="bg_bot_content">
+            <div class="sub_news">
+              <p id="sub">Subscribe</p>
+              <p id="newsl">Newsletter</p>
+            </div>
+            <form action="" method="POST" id="blog-form">
+              {% csrf_token %}
+              <div class="mail_inp">
+                <input type="email" name="subscriberemail" id="mail_inp" placeholder="Enter your email ID....." required />
+              </div>
+              <div class="submit_btn">
+                <button id="sub_inp" type="submit" value="SUBMIT"> Submit </button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </section>
+
+    <script>
+      function submitForm() {
+        // Get the first form with the name
+        // Usually the form name is not repeated
+        // but duplicate names are possible in HTML
+        // Therefore to work around the issue, enforce the correct index
+        var frm = document.getElementsById("contact-form")[0];
+        frm.submit(); // Submit the form
+        frm.reset(); // Reset all form data
+        return false; // Prevent page refresh
+      }
+      // let msg = document.write("messages");
+      // window.alert(console.log(msg));
+    </script>
+  </body>
+
+
+
+
+
+
+
+
+</html>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/products.css' %}">
+    <title>Products</title>
+</head>
+<body>
+    <div class="main_page_products">
+        <div class="main_page">
+            <div class="main_page_heading">
+                <h2>PRODUCTS</h2>
+            </div>
+            <div class="main_page_content">
+                <section class="first_product">
+                    <div class="first_product_content">
+                        <div class="first_product_left_content">
+                            <img src="{% static 'images/card.png' %}" alt="">
+                        </div>
+                        <div class="first_product_right_content">
+                            <h4>Digital Card / Posters</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore facere impedit aut asperiores dolorum ipsum dicta itaque accusamus recusandae nisi!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa illo unde aspernatur laborum minima? Soluta accusantium tenetur, voluptates, a nulla, reprehenderit nesciunt cupiditate sit debitis quidem error labore eos quaerat?</p>
+                            <div class="product_view_btn">
+                                <a href="">View More</a>
+                                </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="second_product">
+                    <div class="second_product_content">
+                        <div class="second_product_left_content">
+                            <h4>Snap / Insta Lens</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus deserunt alias, vitae quo, ipsum cumque voluptate facere quia unde quod assumenda in blanditiis ut nesciunt optio dolores ducimus necessitatibus officia neque saepe. Minus, distinctio. Adipisci, quibusdam recusandae velit doloremque rem possimus magni cum accusantium necessitatibus ullam, nostrum inventore officia quam.</p>
+                            <div class="product_view_btn">
+                                <a href="">View More</a>
+                                </div>
+                        </div>
+                        <div class="second_product_right_content">
+                            <img src="{% static 'images/lens.png' %}" alt="">
+                        </div>
+                    </div>
+                </section>
+                <section class="third_product">
+                    <div class="third_product_content">
+                        <div class="third_product_left_content">
+                            <img class="society_img" src="{% static 'images/society.png' %}" alt="">
+                        </div>
+                        <div class="third_product_right_content">
+                            <h4>Society Management <span>System</span></h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut voluptatibus repellendus necessitatibus, fugiat beatae saepe eaque. Quaerat animi obcaecati aliquid ab. Ad deserunt assumenda harum, facere esse fugiat hic ut animi quisquam unde debitis optio nostrum, veniam tempore doloribus quos dolores libero. Explicabo harum eaque earum eveniet itaque, assumenda maiores?</p>
+                            <div class="product_view_btn">
+                            <a href="">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

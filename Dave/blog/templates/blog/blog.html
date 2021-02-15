@@ -1,0 +1,208 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="{{posts.Title}}" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+  </head>
+  <body>
+    <section class="blogpost">
+      <div class="bg_container">
+        <div class="bg_up">
+          <div class="bg_head">
+            <p>BLOG</p>
+          </div>
+          <!-- <img class="bgimg" src="{% static 'images/bg_vector.png' %}" alt="" /> -->
+
+          <div class="bg_content">
+            <div class="bg_search">
+              <form class="search_form" action="/search" method="GET">
+                   {% csrf_token %}
+                <div class="inp">
+                  <input
+                    class="top_search"
+                    type="text"
+                    placeholder="Type here....."
+                    name="q"
+                  />
+                </div>
+                <div class="img_s">
+                  <button class="searchbtn" type="submit">
+                    <img src="{% static 'images/search.svg' %}" alt="" />
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="bg_post">
+              {% for data in posts %} {% if forloop.counter0|divisibleby:3 %}
+              <div class="row">
+                {% endif %}
+                <div class="blog_card">
+                  <a
+                    style="color: black"
+                    href="{% url 'blog:detail' slug=data.Slug %}"
+                  >
+                    <img
+                      class="blog_img"
+                      src="{{ data.Image.url }}"
+                      alt="{{data.Title}}"
+                    />
+                    <div class="post_tag">
+                      <p>{{data.Tag}}</p>
+                    </div>
+                    <div class="img_blur">
+                      <div class="post_title">
+                        <h2>{{ data.Title }}</h2>
+                      </div>
+                      <div class="post_date">
+                        <p>{{data.Date}}</p>
+                      </div>
+                      <div class="post_desc">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Ofcing elit. consectetur adipisicing elit.
+                          Ofcing elit. Officiis ab est hi Officiis ab est hic
+                          cum alias! Sit cum porro eligendi q id.Lorem ipsum
+                          dolor sit amet
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% if forloop.counter|divisibleby:3 or forloop.last %}
+              </div>
+              <br />{% endif %} {% endfor %}
+            </div>
+            <div class="bg_post_mobile">
+              {% for data in posts %} {% if forloop.counter0|divisibleby:2 %}
+              <div class="row">
+                {% endif %}
+                <div class="blog_card_mobile">
+                  <a
+                    style="color: black"
+                    href="{% url 'blog:detail' slug=data.Slug %}"
+                  >
+                    <img
+                      class="blog_img_mobile"
+                      src="{{ data.Image.url }}"
+                      alt="{{data.Title}}"
+                    />
+                    <div class="post_tag_mobile">
+                      <p>{{data.Tag}}</p>
+                    </div>
+                    <div class="img_blur_mobile">
+                      <div class="post_title_mobile">
+                        <h2>{{ data.Title }}</h2>
+                      </div>
+                      <div class="post_date_mobile">
+                        <p>{{data.Date}}</p>
+                      </div>
+                      <div class="post_desc_mobile">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Ofcing elit. consectetur adipisicing elit.
+                          Ofcing elit. Officiis ab est hi Officiis ab est hic
+                          cum alias! Sit cum porro eligendi q id.Lorem ipsum
+                          dolor sit amet
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% if forloop.counter|divisibleby:2 or forloop.last %}
+              </div>
+              {% endif %} {% endfor %}
+            </div>
+            <div class="bg_pagination">
+              {% if posts %}
+              <ul class="pagination">
+                {% if posts.has_previous %}
+                <!-- <li><a href="?page=1"  class="page-link" >First</a></li> -->
+                <div class="prev_icon">
+                  <li class="prev">
+                    <a href="?page={{posts.previous_page_number}}" class="page-link"><img src="{% static 'images/page2.svg' %}" alt=""></a>
+                  </li>
+                </div>
+                {% endif %}
+                <div class="page_number">
+                  {% for num in posts.paginator.page_range %}
+                  <ul >
+                    {% if posts.number == num %}
+                      <li class="active page-item">
+                        <a class="page-link active-page">{{num}}</a>
+                      </li>
+                      {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{num}}">{{num}}</a>
+                      </li>
+                      {% endif %}
+                    </ul>
+                  {% endfor %}
+                </div>
+                {% if posts.has_next %}
+                <div class="next_icon">
+                  <li class="next">
+                    <a href="?page={{posts.next_page_number}}" class="page-link"><img src="{% static 'images/page1.svg' %}" alt=""></a>
+                  </li>
+                </div>
+                <!-- <li class="page-item"><a href="?page={{posts.paginator.num_pages}}" class="page-link">Last</a></li> -->
+                {% endif %}
+              </ul>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="bg_mail">
+          <div class="bg_bot_content">
+            <div class="sub_news">
+              <p id="sub">Subscribe</p>
+              <p id="newsl">Newsletter</p>
+            </div>
+            <form action="" method="POST" id="blog-form">
+              <!-- {% for message in messages %}
+                            <p id="messages">{{message}}</p>
+                        {% endfor %} -->
+              {% csrf_token %}
+              <div class="mail_inp">
+                <input
+                  type="email"
+                  name="subscriberemail"
+                  id="mail_inp"
+                  placeholder="Enter your email ID....."
+                  required
+                />
+              </div>
+              <div class="submit_btn">
+                <button id="sub_inp" type="submit" value="SUBMIT">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <br />
+
+    <script>
+      function submitForm() {
+        // Get the first form with the name
+        // Usually the form name is not repeated
+        // but duplicate names are possible in HTML
+        // Therefore to work around the issue, enforce the correct index
+        var frm = document.getElementsById("contact-form")[0];
+        frm.submit(); // Submit the form
+        frm.reset(); // Reset all form data
+        return false; // Prevent page refresh
+      }
+      // let msg = document.write("messages");
+      // window.alert(console.log(msg));
+    </script>
+  </body>
+</html>
+{% endblock %}

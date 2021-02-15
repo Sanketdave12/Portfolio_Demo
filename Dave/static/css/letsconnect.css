@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  object-fit: contain;
+}
+.letsconnect {
+  width: 85%;
+  left: 7.5%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 18%;
+}
+.letsconnect_mobile{
+  visibility: hidden;
+  display: none;
+}
+.lc_container {
+  width: 100%;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 16.8% 83%;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "lc_heading lc_connect";
+}
+.lc_heading{
+  color: black;
+  font-size: 3.5vw;
+  font-weight: bold;
+  opacity: 0.3;
+}
+.lc_heading h1{
+  position: absolute;
+  top: 42%;
+  left: -21%;
+  /* margin-inline-start: auto; */
+  /* margin-inline-end: auto; */
+  transform: rotate(-90deg);
+}
+.lc_connect {
+  background-image: url("../images/letsconnect.png");
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "lc_form lc_contact";
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: top;
+}
+.lc_form .lc_form_heading{
+  margin-top: 3vw;
+}
+.lc_form .lc_form_form{
+  margin-top: 3vw;
+  margin-bottom: auto;
+}
+
+.lc_contact {
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  height: auto;
+}
+.mid_heading {
+  margin-bottom: auto;
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #fff;
+}
+.div{
+  display: flex;
+  width: auto;
+  column-gap: 2vw;
+}
+.div #f_name,#l_name{
+  justify-content: flex-start;
+  width: 100%;
+}
+.lc_form .div #f_name label,.lc_form .div #l_name label{
+  font-size: 1.2vw;
+  line-height: 1.5vw;
+}
+.lc_connect .lc_form{
+  width: auto;
+  margin-left: 10%;
+  color: rgb(177, 240, 4);
+  margin-right: 10%;
+}
+.lc_connect .lc_form form{
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lc_connect .lc_form .namesame {
+  width: 100%;
+  outline: none;
+  color: white;
+  font-size: 1.2vw;
+  line-height: 2.5vw;
+  border-top: 1px solid greenyellow;
+  background: linear-gradient(
+    rgba(160, 160, 160, 0.5),
+    rgba(160, 160, 160, 0.5)
+  );
+  padding: 0vw 0.5vw;
+}
+.lc_connect .lc_form label{
+  font-size: 1.2vw;
+  line-height: 2vw;
+}
+.lc_connect .lc_form .same {
+  width: 100%;
+  outline: none;
+  color: white;
+  font-size: 1.2vw;
+  line-height: 2.5vw;
+  border-top: 1px solid greenyellow;
+  background: linear-gradient(
+    rgba(160, 160, 160, 0.5),
+    rgba(160, 160, 160, 0.5)
+  );
+  padding: 0vw 0.5vw;
+}
+
+.lc_form_btn {
+  background-color: rgb(177, 240, 4);
+  color: #fff;
+  border: none;
+  padding: 0.5vw 1.5vw;
+  outline: none;
+  margin-top: 1vw;
+  font-size: 1.2vw;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0.25vw 0.25vw rgb(119, 160, 8);
+}
+
+
+.call_us_heading{
+  margin-left: 2vw;
+  display: flex;
+}
+.call_us_heading img, .mail_us_heading img{
+  width: 3.5vw;
+  height: auto;
+}
+.callus {
+  font-size: 2vw;
+  letter-spacing: 3px;
+  margin-left: 1.5vw;
+  line-height: 4vw;
+}
+
+.call_us a{
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+.mail_us_heading{
+  margin-left: 2vw;
+  display: flex;
+}
+
+.mailus {
+  font-size: 2vw;
+  line-height: 4vw;
+  letter-spacing: 3px;
+  margin-left: 1.5vw;
+}
+
+.mail_us a{
+  text-decoration: none;
+  font-size: 1vw;
+}
+.lc_subhead{
+  margin-top: 3vw;
+}
+.lc_subhead p {
+  font-size: 2vw;
+  text-align: center;
+  letter-spacing: 2px;
+  padding-top: 0.7vw;
+  padding-bottom: 0.7vw;
+  font-weight: 800;
+  background-color: rgb(177, 240, 4);
+  color: black;
+}
+
+.lc_contact {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 0.25fr 0.25fr 0.2fr auto;
+  grid-template-areas:
+    "lc_subhead"
+    "call_us"
+    "mail_us"
+    "lc_btn";
+}
+.lc_mobile, .lc_email{
+  padding-left: 7vw;
+  /* letter-spacing: 2px; */
+  opacity: 0.5;
+}
+.lc_mobile:hover, .lc_email:hover{
+  opacity: 0.8;
+}
+.lc_btn {
+  text-align: center;
+  margin-top: 2vw;
+}
+.lc_btn img{
+  width: 15vw;
+  height: auto;
+}
+.contact {
+  display: none;
+  visibility: hidden;
+}
+
+
+@media (min-width:321px) and (max-width:414px){
+  .letsconnect{
+    visibility: hidden;
+    display: none;
+  }
+  .letsconnect_mobile{
+    visibility: visible;
+    display: inline;
+    width: 100%;
+  }
+  .lc_container_mobile{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "lc_heading_mobile"
+    "lc_connect_mobile"
+    "lc_contact_mobile";
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .lc_heading_mobile{
+    grid-area: lc_heading_mobile;
+    width: 100%;
+    margin-top: 15%;
+    margin-bottom: 3%;
+    font-size: 10vw;
+    font-weight: bold;
+    opacity: 0.3;
+    text-align: center;
+  }
+  .lc_connect_mobile{
+    grid-area: lc_connect_mobile;
+    width: 100%;
+    background-image: url('../images/letsconnect.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .lc_form_form_mobile form{
+    width: 91%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 8vw;
+    color: white;
+    font-weight: 400;
+    margin-top: 10vw;
+  }
+  .lc_form_form_mobile form label{
+    font-size: 4vw;
+    color: rgb(177, 240, 4);
+  }
+  .lc_form_form_mobile form input{
+    padding: 3vw 3.5vw;
+    margin-bottom: 2vw;
+    color: white;
+    width: 93%;
+  }
+  .lc_form_form_mobile form input.same_mobile{
+    background: rgba(160, 160, 160, 0.5);
+  }
+  .lc_form_form_mobile form textarea{
+    margin-bottom: 5vw;
+    color: white;
+    width: 100%;
+    background:rgba(160, 160, 160, 0.5);
+  }
+  .lc_form_form_mobile form .lc_mb{
+    text-align: center;
+    margin-top: 5vw;
+    margin-bottom: 10vw;
+  }
+  .lc_form_form_mobile form button{
+    padding: 2vw 7vw;
+    cursor: pointer;
+    background-color: rgb(177, 240, 4);
+    outline: none;
+    border: 0;
+  }
+  .lc_form_form_mobile form button.lc_form_btn_mobile{
+    font-size: 5vw;
+    color: white;
+    font-weight: 500;
+  }
+  .lc_contact_mobile{
+    grid-area: lc_contact_mobile;
+    width: 100%;
+    background-color: rgb(68, 68, 69);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "lc_subhead_mobile"
+    "call_us_mobile"
+    "mail_us_mobile"
+    "lc_btn_mobile";
+  }
+
+  .lc_subhead_mobile{
+    grid-area: lc_subhead_mobile;
+    margin-top: 10vw;
+    background-color: rgb(188, 241, 7);
+    font-size: 9vw;
+    letter-spacing: 0.9vw;
+    padding: 4vw 0vw;
+    text-align: center;
+    color:rgb(50, 51, 61);
+    font-weight: 700;
+  }
+  .call_us_mobile{
+    grid-area: call_us_mobile;
+    margin-top: 5vw;
+    margin-left: 5vw;
+  }
+  .call_us_mobile .call_us_heading_mobile{
+    display: flex;
+    column-gap: 4vw;
+    color: white;
+  }
+  .call_us_mobile .call_us_heading_mobile .callimage img{
+    width: 12vw;
+    height: auto;
+  }
+  .callus_mobile{
+    line-height: 12vw;
+    letter-spacing: 0.9vw;
+    font-size: 7vw;
+  }
+  .call_us_mobile a{
+    text-decoration: none;
+    font-weight: 200;
+    letter-spacing: 0.6vw;
+  }
+  .call_us_mobile a p.lc_mobile_mobile{
+    margin-left: 15vw;
+  }
+  .mail_us_mobile{
+    grid-area: mail_us_mobile;
+    margin-top: 5vw;
+    margin-left: 5vw;
+  }
+  .mail_us_mobile .mail_us_heading_mobile{
+    display: flex;
+    column-gap: 4vw;
+    color: white;
+  }
+  .mail_us_mobile .mail_us_heading_mobile .mailimage img{
+    width: 12vw;
+    height: auto;
+  }
+
+  .mail_us_mobile a{
+    text-decoration: none;
+    font-weight: 200;
+    letter-spacing: 0.6vw;
+  }
+  .mail_us_mobile a p.lc_email_mobile{
+    margin-left: 15vw;
+  }
+  .mailus_mobile{
+    line-height: 12vw;
+    font-size: 7vw;
+    letter-spacing: 0.9vw;
+  }
+  .lc_btn_mobile{
+    grid-area: lc_btn_mobile;
+    margin-top: 12vw;
+    margin-bottom: 9vw;
+    text-align: center;
+  }
+  .lc_btn_mobile img{
+    width: 55vw;
+    height: auto;
+  }
+  .foot_mobile{
+  width: 100%;
+  height: 10vw;
+  background-color: rgb(123,123,123);
+  }
+
+}

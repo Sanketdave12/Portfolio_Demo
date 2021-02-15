@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/agency.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+   
+</head>
+<body>
+        <div class="agency_main_page">
+        <section class="ag_cont">
+            <div class="ag_container">
+                <div class="ag_left">
+                <div class="main_head">
+                        <p>AGENCY</p>
+                </div>
+                <div class="sub_head">
+                    <h1>WHO WE ARE</h1>
+                </div>
+                </div>
+                <div class="ag_right">
+                    <div class="right_top">
+                        <img src="{% static 'images/agencytop.png' %}" alt="">    
+                    </div>
+                    <div class="right_mid">
+                        <div class="mid_left">
+                            <img src="{% static 'images/Rectangle -1.png' %}" alt="">
+                        </div>
+                        <div class="mid_mid">
+                            <img src="{% static 'images/Rectangle -1.png' %}" alt="">
+                        </div>
+                        <div class="mid_right">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Pariatur sint maiores perspiciatis odio blanditiis alias
+                                ullam quibusdam quisquam laborum dignissimos eveniet
+                                dolorem incidunt autem accusantium, amet aliquid ad 
+                                vel? Eligendi corporis eius vel numquam at aliquid
+                                impedit vitae quis quae quo, quidem autem, cum ab,
+                                    magni maiores velit assumenda id doloremque repellat 
+                                    amet doloribus. Laborum perspiciatis ullam exercitat
+                                    ionem! Maxime quos architecto perferendis nam tempore 
+                                    vel recusandae doloremque quod laudantium et?</p>
+                        </div>
+                    </div>
+                    <div class="right_bot">
+                        <p>"I CAN DO WHATEVER I WANT TODAY."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </div>
+            <section class="ag_cont_mobile">
+                <div class="ag_container_mobile">
+                   <div class="ag_up_mobile">
+                        <div class="main_head_mobile"><p>AGENCY</p></div>
+                        <div class="sub_head_mobile"><p>WHO WE ARE</p></div>
+                   </div>
+                    <div class="ag_down_mobile">
+                        <div class="right_top_mobile">
+                            <img src="{% static 'images/agencytop.png' %}" alt="">    
+                        </div>
+                        <div class="mid_right_mobile">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Pariatur sint maiores perspiciatis odio blanditiis alias
+                                ullam quibusdam quisquam laborum dignissimos eveniet
+                                dolorem incidunt autem accusantium, amet aliquid ad 
+                                vel? Eligendi corporis eius vel numquam at aliquid
+                                impedit vitae quis quae quo, quidem autem, cum ab,
+                                    magni maiores velit assumenda id doloremque repellat 
+                                    amet doloribus. Laborum perspiciatis ullam exercitat
+                                    ionem! Maxime quos architecto perferendis nam tempore 
+                                    vel recusandae doloremque quod laudantium et?</p>
+            </div> 
+                    <div class="mid_left_mobile">
+                        <img src="{% static 'images/Rectangle -1.png' %}" alt="">
+                    </div>
+                    <div class="mid_mid_mobile">
+                        <img src="{% static 'images/Rectangle -1.png' %}" alt="">
+                    </div>
+                    <div class="right_bot_mobile">
+                        <p>"I CAN DO WHATEVER I WANT TODAY."</p>
+                    </div>
+                    </div>
+                
+            </section>
+        </div>
+            <!-- <section class="contact" id="connect">
+                <div class="container1">
+                <div class="left1">
+                    <div class="news">
+                    <h6>LATEST NEWS</h6>
+                    <br>
+                    <p class="news-title">SEO has era of digitisation.</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Esse similique aliquid
+                        modi delectus officiis dolores?</p>
+                    <br>
+                    <p class="news-title">SEO has era of digitisation.</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Esse similique aliquid
+                        modi delectus officiis dolores?</p>
+                    </div>
+                    <div class="expfoot">
+                    <h6>EXPERTISE</h6>
+                    <div class="explist">
+                        <p>DIGITAL MARKETING</p>
+                        <p>DIGITAL MARKETING</p>
+                        <p>DIGITAL MARKETING</p>
+                        <p>DIGITAL MARKETING</p>
+                        <p>DIGITAL MARKETING</p>
+                    </div>
+                    </div>
+                    <div class="contfoot">
+                    <h6>CONTACT US</h6>
+                    </div>
+                </div>
+                <div class="right1">
+                    <div class="contactform">
+                    <div class="contacttext">
+                        <h2 id="head1">DO YOU HAVE ANY </h2>
+                        <h2 id="head2">START UP</h2>
+                        <h2 id="head3">IDEA?</h2>
+                    </div>
+                    <div class="contactin">
+                        <form action="" method="POST" id="contact-form">
+                        {% csrf_token %}
+                        <input type="text" name='name' placeholder="Enter your name"><br>
+                        <input type="email" name='email' placeholder="Email Address"><br>
+                        <input type="phone" name='phone' placeholder="Mobile Number"><br>
+                        <input type="text" name='message' placeholder="Query"><br>
+                        <button class="button_submit" type="submit" onclick="submitForm()">Submit</button>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </section> -->
+        
+</body>
+</html>
+
+
+{% endblock %}

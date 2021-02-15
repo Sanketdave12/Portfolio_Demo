@@ -1,0 +1,207 @@
+{% extends '../portfolio.html' %}
+{% block content1 %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+  </head>
+
+  <body>
+    <section class="port">
+      <div class="containerport">
+        <div class="leftport">
+          <h1 id="">PORTFOLIO</h1>
+          <h5 class="photography">PHOTOGRAPHY</h5>
+        </div>
+        <div class="rightport">
+          <!-- <div class="carousel owl-carousel"> -->
+          <div class="container" id="blur">
+            <div class="content">
+              <img
+                onclick="imageList()"
+                src="{% static 'images/1.png' %}"
+                alt=""
+              />
+              <h4>DIGITAL MARKETING</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Explicabo molestias harum suscipit excepturi corrupti la borum
+                in incidunt iure libero a perferendis quos odit nisi, sed vero
+                esse ex ipsam! Quibusdam.
+              </p>
+            </div>
+          </div>
+          <div id="popup">
+            <img src="{% static 'images/1.png' %}" alt="" />
+            <a href="#" onclick="imageList()"
+              ><i class="far fa-times-circle"></i
+            ></a>
+          </div>
+
+          <div class="container" id="blur1">
+            <div class="content">
+              <img
+                onclick="imageList1()"
+                src="{% static 'images/2.png' %}"
+                alt=""
+              />
+              <h4>DIGITAL MARKETING</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Explicabo molestias harum suscipit excepturi corrupti la borum
+                in incidunt iure libero a perferendis quos odit nisi, sed vero
+                esse ex ipsam! Quibusdam.
+              </p>
+            </div>
+          </div>
+          <div id="popup1">
+            <img src="{% static 'images/2.png' %}" alt="" />
+            <a href="#" onclick="imageList1()"
+              ><i class="far fa-times-circle"></i
+            ></a>
+          </div>
+
+          <div class="container" id="blur2">
+            <div class="content">
+              <img
+                onclick="imageList2()"
+                src="{% static 'images/3.png' %}"
+                alt=""
+              />
+              <h4>DIGITAL MARKETING</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Explicabo molestias harum suscipit excepturi corrupti la borum
+                in incidunt iure libero a perferendis quos odit nisi, sed vero
+                esse ex ipsam! Quibusdam.
+              </p>
+            </div>
+          </div>
+          <div id="popup2">
+            <img src="{% static 'images/3.png' %}" alt="" />
+            <a href="#" onclick="imageList2()"
+              ><i class="far fa-times-circle"></i
+            ></a>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <section class="port_mobile">
+      <div class="containerport_mobile">
+        <div class="leftport_mobile">
+          <h1 id="">PORTFOLIO</h1>
+          <h5>PHOTOGRAPHY</h5>
+        </div>
+        <div class="rightport_mobile">
+          <!-- <div class="carousel owl-carousel"> -->
+          <div class="container_mobile" id="blur_mobile">
+            <div class="content_mobile">
+              <img
+                onclick="imageList()"
+                src="{% static 'images/1.png' %}"
+                alt=""
+              />
+              <h4>DIGITAL MARKETING</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Explicabo molestias harum suscipit excepturi corrupti la borum
+                in incidunt iure libero a perferendis quos odit nisi, sed vero
+                esse ex ipsam! Quibusdam.
+              </p>
+            </div>
+          </div>
+          <div id="popup_mobile">
+            <img src="{% static 'images/1.png' %}" alt="" />
+            <a href="#" onclick="imageList()"
+              ><i class="far fa-times-circle"></i
+            ></a>
+          </div>
+
+          <div class="container_mobile" id="blur1_mobile">
+            <div class="content_mobile">
+              <img
+                onclick="imageList1()"
+                src="{% static 'images/2.png' %}"
+                alt=""
+              />
+              <h4>DIGITAL MARKETING</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Explicabo molestias harum suscipit excepturi corrupti la borum
+                in incidunt iure libero a perferendis quos odit nisi, sed vero
+                esse ex ipsam! Quibusdam.
+              </p>
+            </div>
+          </div>
+          <div id="popup1_mobile">
+            <img src="{% static 'images/2.png' %}" alt="" />
+            <a href="#" onclick="imageList1()"
+              ><i class="far fa-times-circle"></i
+            ></a>
+          </div>
+
+          <div class="container_mobile" id="blur2_mobile">
+            <div class="content_mobile">
+              <img
+                onclick="imageList2()"
+                src="{% static 'images/3.png' %}"
+                alt=""
+              />
+              <h4>DIGITAL MARKETING</h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Explicabo molestias harum suscipit excepturi corrupti la borum
+                in incidunt iure libero a perferendis quos odit nisi, sed vero
+                esse ex ipsam! Quibusdam.
+              </p>
+            </div>
+          </div>
+          <div id="popup2_mobile">
+            <img src="{% static 'images/3.png' %}" alt="" />
+            <a href="#" onclick="imageList2()"
+              ><i class="far fa-times-circle"></i
+            ></a>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </section>
+
+
+    <script>
+      function imageList() {
+        let blur = document.getElementById("blur");
+        blur.classList.toggle("active");
+        let popup = document.getElementById("popup");
+        popup.classList.toggle("active");
+        console.log("1st Image");
+      }
+      function imageList1() {
+        let blur1 = document.getElementById("blur1");
+        blur1.classList.toggle("active1");
+        let popup1 = document.getElementById("popup1");
+        popup1.classList.toggle("active1");
+        console.log("2nd Image");
+      }
+      function imageList2() {
+        let blur2 = document.getElementById("blur2");
+        blur2.classList.toggle("active2");
+        let popup2 = document.getElementById("popup2");
+        popup2.classList.toggle("active2");
+        console.log("3rd Image");
+      }
+    </script>
+    <script src="https://kit.fontawesome.com/d4d79b6b28.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+  </body>
+</html>
+{% endblock %}

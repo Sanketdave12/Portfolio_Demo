@@ -1,0 +1,67 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static '/css/base.css' %}" /> -->
+    <link rel="stylesheet" href="{% static '/css/expertise.css' %}">
+    <!-- <link rel="stylesheet" href="{% static '/css/contact.css' %}"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="exp">
+        <!-- <hr class="horizontal"> -->
+
+        {% with request.resolver_match.url_name as url_name %}
+        <ul class="menu menu2">
+            <li class="{% if url_name == 'portfolio' %} active {% endif %}"><a href="/portfolio/photography">PHOTOGRAPHY</a></li>
+            <li class="{% if url_name == 'logo_design' %} active {% endif %}"><a href="/portfolio/logo_design">LOGO DESIGN</a></li>
+            <li class="{% if url_name == 'web_design' %} active {% endif %}"><a href="/portfolio/web_design">WEB DESIGN</a></li>
+            <li class="{% if url_name == 'vfx' %} active {% endif %}"><a href="/portfolio/vfx">VFX</a></li>
+            <li class="{% if url_name == 'animations' %} active {% endif %}"><a href="/portfolio/animations">ANIMATIONS</a></li>
+            <li class="{% if url_name == 'xyz' %} active {% endif %}"><a href="/portfolio/xyz">XYZ</a></li>
+        </ul>
+        {% endwith %}
+    </section>
+
+     <div class="selectdiv">
+        <label>
+            <select name="list" id="list" accesskey="target" onchange="handleChange()">
+                <option class="{% if url_name == 'portfolio' %} active {% endif %}" value="photography"><a href="/portfolio/photography">PHOTOGRAPHY</a></option>
+                <option class="{% if url_name == 'logo_design' %} active {% endif %}" value="logo_design"><a href="/portfolio/logo_design">LOGO DESIGN</a></option>
+                <option class="{% if url_name == 'web_design' %} active {% endif %}" value="web_design"><a href="/portfolio/web_design">WEB DESIGN</a></option>
+                <option class="{% if url_name == 'seo' %} active {% endif %}" value="vfx"><a href="/portfolio/vfx">VFX</a></option>
+                <option class="{% if url_name == 'animations' %} active {% endif %}" value="animations"><a href="/portfolio/animations">ANIMATIONS</a></option>
+                <option class="{% if url_name == 'xyz' %} active {% endif %}" value="xyz"><a href="/portfolio/xyz">XYZ</a></option>
+            </select>
+        </label>
+      </div>
+    <section class="blockport">
+        {% block content1 %}
+        {% endblock %}
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+       <script>
+            window.onload = function() {
+            let a = window.location;
+            a = a.href.split("/");
+            let value = a[a.length - 2];
+            $('#list').val(value);
+            }
+
+            function handleChange() {
+                var x = document.getElementById("list").value;
+                location.replace(`https://portfoliodemo.pythonanywhere.com/portfolio/${x}/`);
+            }
+        </script>
+
+</body>
+
+</html>
+{% endblock %}

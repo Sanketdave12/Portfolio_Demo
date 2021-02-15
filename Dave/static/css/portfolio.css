@@ -1,0 +1,831 @@
+.exp .menu.menu2{
+  margin-right: 7.6vw;
+}
+.exp .menu.menu2 li a {
+  display: block;
+  padding: 0.6vw 2.5vw;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2vw;
+  font-weight: 500;
+  letter-spacing: 0.08vw;
+}
+.blockport {
+  object-fit: contain;
+}
+.port_mobile{
+  visibility: hidden;
+  display: none;
+}
+.port{
+  width: 85%;
+}
+.containerport {
+  height: auto;
+  width: 100%;
+  top: 4vw;
+  display: grid;
+  grid-template-columns: 25.6% 82.4%;
+  grid-template-rows: 1fr;
+  grid-template-areas: "leftport rightport";
+  object-fit: contain;
+}
+.containerport .leftport h1 {
+  position: relative;
+  color: black;
+  top: 44%;
+  left: -4%;
+  transform: rotate(-90deg);
+  font-size: 6.5vw;
+  font-weight: bold;
+  opacity: 0.2;
+}
+.containerport .leftport h5.vfx {
+  position: relative;
+  color: black;
+  top: -5%;
+  letter-spacing: 0.1vw;
+  left: 9%;
+  transform: rotate(-90deg);
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+.containerport .leftport h5.photography {
+  position: relative;
+  color: black;
+  top: 13%;
+  left: 9%;
+  transform: rotate(-90deg);
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+.containerport .leftport h5.animation {
+  position: relative;
+  color: black;
+  top: 8%;
+  left: 8.2%;
+  transform: rotate(-90deg);
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+.containerport .leftport h5.logo_design {
+  position: relative;
+  color: black;
+  top: 10%;
+  left: 8.2%;
+  transform: rotate(-90deg);
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+.containerport .leftport h5.web_design {
+  position: relative;
+  color: black;
+  top: 7.5%;
+  left: 8.2%;
+  transform: rotate(-90deg);
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+.containerport .leftport h5.xyz {
+  position: relative;
+  color: black;
+  top: -5%;
+  left: 8.2%;
+  transform: rotate(-90deg);
+  font-size: 2.5vw;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.rightport {
+  display: flex;
+}
+.rightport .container .content{
+  /* margin-left: 1.3vw; */
+  margin-right: 3.25vw;
+}
+.rightport .container .content img {
+  width: 21.1vw;
+  height: auto;
+}
+.rightport .container .content p {
+  text-align: justify;
+  margin-top: 1.2vw;
+  font-size: 1vw;
+}
+.rightport .container .content h4 {
+  margin-top: 0.7vw;
+  text-align: center;
+  font-size: 1.2vw;
+}
+.container#blur.active {
+  pointer-events: none;
+  user-select: none;
+}
+.container#blur1.active1 {
+  pointer-events: none;
+  user-select: none;
+}
+.container#blur2.active2 {
+  pointer-events: none;
+  user-select: none;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  /* padding: 2vw; */
+  margin-bottom: 4vw;
+}
+.container .content {
+  position: relative;
+  max-width: 800px;
+}
+
+/* .container .content img {
+  max-width: 100%;
+  display: block;
+} */
+a i {
+  position: absolute;
+  margin-top: 12vw;
+  text-decoration: none;
+  color: white;
+  background: transparent;
+  top: 2%;
+  right: 36%;
+  font-size: 35px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+#popup,
+#popup1,
+#popup2 {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  widows: 600px;
+  padding: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 999;
+}
+#popup.active,
+#popup1.active1,
+#popup2.active2 {
+  width: 100%;
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  height: 101vh;
+}
+#popup img {
+  max-width: 100%;
+  display: block;
+  position: absolute;
+  left: 35%;
+  top: 25%;
+}
+#popup1 img {
+  max-width: 100%;
+  display: block;
+  position: absolute;
+  left: 35%;
+  top: 25%;
+}
+#popup2 img {
+  max-width: 100%;
+  display: block;
+  position: absolute;
+  left: 35%;
+  top: 25%;
+}
+
+/* ######################################################################################### */
+/* ################################## Media Query ########################################## */
+/* ######################################################################################### */
+
+@media (min-width: 600px) and (max-width: 681px) {
+  /* ############ Hidden Area ############ */
+  .port {
+    display: none;
+    visibility: hidden;
+  }
+  .horizontal {
+    visibility: hidden;
+    display: none;
+  }
+  ul.menu.menu2 {
+    display: none;
+    visibility: hidden;
+  }
+  .containerport_mobile .leftport_mobile h5 {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile,
+  #popup1_mobile,
+  #popup2_mobile {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile.active,
+  #popup1_mobile.active1,
+  #popup2_mobile.active2 {
+    visibility: hidden;
+  }
+  #popup_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup1_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup2_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  /* ##################################### */
+  .port_mobile{
+    visibility: visible;
+    display: inline;
+  }
+  .header li a {
+    width: 100%;
+    text-align: center;
+    margin-right: 0px;
+  }
+
+  .blockport {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .containerport_mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "leftport_mobile"
+      "rightport_mobile";
+    height: fit-content;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .containerport_mobile .leftport_mobile h1 {
+    color: black;
+    left: 0%;
+    margin-top: 10%;
+    transform: rotate(0deg);
+    font-size: 15vw;
+    opacity: 0.7;
+  }
+
+  .leftport_mobile {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rightport_mobile {
+    margin-top: 60%;
+    display: inline;
+    height: auto;
+    width: auto;    
+    margin-left: 16px;
+    margin-right: 16px;
+    object-fit: contain;
+  }
+  .content_mobile img{
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+  }
+  .content_mobile h4{
+    text-align: center;
+    font-size: 5.5vw;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .content_mobile p{
+    font-size: 5vw;
+    margin-top: 0.5rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+    line-height: 1.5em;
+  }
+}
+@media (min-width: 518px) and (max-width: 600px) {
+  /* ############ Hidden Area ############ */
+  .port {
+    display: none;
+    visibility: hidden;
+  }
+  .horizontal {
+    visibility: hidden;
+    display: none;
+  }
+  ul.menu.menu2 {
+    display: none;
+    visibility: hidden;
+  }
+  .containerport_mobile .leftport_mobile h5 {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile,
+  #popup1_mobile,
+  #popup2_mobile {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile.active,
+  #popup1_mobile.active1,
+  #popup2_mobile.active2 {
+    visibility: hidden;
+  }
+  #popup_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup1_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup2_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  /* ##################################### */
+  .port_mobile{
+    visibility: visible;
+    display: inline;
+  }
+  .header li a {
+    width: 100%;
+    text-align: center;
+    margin-right: 0px;
+  }
+
+  .blockport {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .containerport_mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "leftport_mobile"
+      "rightport_mobile";
+    height: fit-content;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .containerport_mobile .leftport_mobile h1 {
+    color: black;
+    left: 0%;
+    margin-top: 10%;
+    transform: rotate(0deg);
+    font-size: 15vw;
+    opacity: 0.7;
+  }
+
+  .leftport_mobile {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rightport_mobile {
+    margin-top: 60%;
+    display: inline;
+    height: auto;
+    width: auto;    
+    margin-left: 16px;
+    margin-right: 16px;
+    object-fit: contain;
+  }
+  .content_mobile img{
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+  }
+  .content_mobile h4{
+    text-align: center;
+    font-size: 5.5vw;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .content_mobile p{
+    font-size: 5vw;
+    margin-top: 0.5rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+    line-height: 1.5em;
+  }
+}
+@media (min-width: 414px) and (max-width: 518px) {
+  /* ############ Hidden Area ############ */
+  .port {
+    display: none;
+    visibility: hidden;
+  }
+  .horizontal {
+    visibility: hidden;
+    display: none;
+  }
+  ul.menu.menu2 {
+    display: none;
+    visibility: hidden;
+  }
+  .containerport_mobile .leftport_mobile h5 {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile,
+  #popup1_mobile,
+  #popup2_mobile {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile.active,
+  #popup1_mobile.active1,
+  #popup2_mobile.active2 {
+    visibility: hidden;
+  }
+  #popup_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup1_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup2_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  /* ##################################### */
+  .port_mobile{
+    visibility: visible;
+    display: inline;
+  }
+  .header li a {
+    width: 100%;
+    text-align: center;
+    margin-right: 0px;
+  }
+
+  .blockport {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .containerport_mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "leftport_mobile"
+      "rightport_mobile";
+    height: fit-content;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .containerport_mobile .leftport_mobile h1 {
+    color: black;
+    left: 0%;
+    margin-top: 10%;
+    transform: rotate(0deg);
+    font-size: 15vw;
+    opacity: 0.7;
+  }
+
+  .leftport_mobile {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rightport_mobile {
+    margin-top: 60%;
+    display: inline;
+    height: auto;
+    width: auto;    
+    margin-left: 16px;
+    margin-right: 16px;
+    object-fit: contain;
+  }
+  .content_mobile img{
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+  }
+  .content_mobile h4{
+    text-align: center;
+    font-size: 5.5vw;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .content_mobile p{
+    font-size: 5vw;
+    margin-top: 0.5rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+    line-height: 1.5em;
+  }
+   .selectdiv {
+    visibility: visible;
+    display: inline;
+    position: absolute;
+    top: 20%;
+    margin: 50px 15%;
+    border: 1px solid rgb(177, 240, 4);
+  }
+
+  /* IE11 hide native button (thanks Matt!) */
+  select::-ms-expand {
+    display: none;
+  }
+  .selectdiv:after {
+    content: url("/static/images/dropdown.svg");
+    font: 17px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(0deg);
+    right: 11px;
+    /*Adjust for position however you want*/
+    top: 18px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #999;
+    position: absolute;
+    pointer-events: none;
+  }
+  .selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 320px;
+    height: 50px;
+    float: right;
+    padding: 0px 24px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #333;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    -ms-word-break: normal;
+    word-break: normal;
+  }
+}
+@media (min-width: 321px) and (max-width: 414px) {
+  /* ############ Hidden Area ############ */
+  .port {
+    display: none;
+    visibility: hidden;
+  }
+  .horizontal {
+    visibility: hidden;
+    display: none;
+  }
+  ul.menu.menu2 {
+    display: none;
+    visibility: hidden;
+  }
+  .containerport_mobile .leftport_mobile h5 {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile,
+  #popup1_mobile,
+  #popup2_mobile {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile.active,
+  #popup1_mobile.active1,
+  #popup2_mobile.active2 {
+    visibility: hidden;
+  }
+  #popup_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup1_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup2_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  /* ##################################### */
+  .port_mobile{
+    visibility: visible;
+    display: inline;
+  }
+  .header li a {
+    width: 100%;
+    text-align: center;
+    margin-right: 0px;
+  }
+
+  .blockport {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .containerport_mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "leftport_mobile"
+      "rightport_mobile";
+    height: fit-content;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .containerport_mobile .leftport_mobile h1 {
+    color: black;
+    left: 0%;
+    margin-top: 15%;
+    transform: rotate(0deg);
+    font-size: 15vw;
+    opacity: 0.3;
+  }
+
+  .leftport_mobile {
+    margin-bottom: 14%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rightport_mobile {
+    /* margin-top: 60%; */
+    display: inline;
+    width: 91%;
+    height: auto;
+    width: auto;    
+    margin-left: 16px;
+    margin-right: 16px;
+    object-fit: contain;
+  }
+  .content_mobile img{
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+  }
+  .content_mobile h4{
+    text-align: center;
+    font-size: 5.5vw;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .content_mobile p{
+    font-size: 5vw;
+    margin-top: 0.5rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+    line-height: 1.5em;
+  }
+}
+@media (max-width: 321px) {
+  /* ############ Hidden Area ############ */
+  .port {
+    display: none;
+    visibility: hidden;
+  }
+  .horizontal {
+    visibility: hidden;
+    display: none;
+  }
+  ul.menu.menu2 {
+    display: none;
+    visibility: hidden;
+  }
+  .containerport_mobile .leftport_mobile h5 {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile,
+  #popup1_mobile,
+  #popup2_mobile {
+    visibility: hidden;
+    display: none;
+  }
+  #popup_mobile.active,
+  #popup1_mobile.active1,
+  #popup2_mobile.active2 {
+    visibility: hidden;
+  }
+  #popup_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup1_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  #popup2_mobile img {
+    visibility: hidden;
+    display: none;
+  }
+  /* ##################################### */
+  .port_mobile{
+    visibility: visible;
+    display: inline;
+  }
+  .header li a {
+    width: 100%;
+    text-align: center;
+    margin-right: 0px;
+  }
+
+  .blockport {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .containerport_mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "leftport_mobile"
+      "rightport_mobile";
+    height: fit-content;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .containerport_mobile .leftport_mobile h1 {
+    color: black;
+    left: 0%;
+    margin-top: 10%;
+    transform: rotate(0deg);
+    font-size: 15vw;
+    opacity: 0.7;
+  }
+
+  .leftport_mobile {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rightport_mobile {
+    margin-top: 60%;
+    display: inline;
+    height: auto;
+    width: auto;    
+    margin-left: 16px;
+    margin-right: 16px;
+    object-fit: contain;
+  }
+  .content_mobile img{
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+  }
+  .content_mobile h4{
+    text-align: center;
+    font-size: 5.5vw;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .content_mobile p{
+    font-size: 5vw;
+    margin-top: 0.5rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+    line-height: 1.5em;
+  }
+}

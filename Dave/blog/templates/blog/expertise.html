@@ -1,0 +1,646 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+  <link rel="stylesheet" href="{% static './css/main.css' %}">
+  <link rel="stylesheet" href="{% static './css/header.css' %}">
+  <link rel="stylesheet" href="{% static './css/contact.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+  <div class="main_container">
+  <!-- Navigation Bar -->
+  <div class="navbar_main">
+  <header class="header">
+    <a href="/" class="text1 logo">LOGO</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li class="{% if url_name == 'home' %} active1 {% endif %}"><a class="text1" href="/">HOME</a></li>
+      <li class="{% if url_name == 'expertise' %} active1 {% endif %}"><a class="text1" href="/expertise/digital_marketing">EXPERTISE</a></li>
+      <li class="{% if url_name == 'agency' %} active1 {% endif %}"><a class="text1" href="/agency">AGENCY</a></li>
+      <!-- <li class="{% if url_name == 'agency' %} active {% endif %}"><a class="text1 agency1" href="/agency">PRODUCTS</a></li> -->
+      <li class="{% if url_name == 'portfolio' %} active1 {% endif %}"><a class="text1" href="/portfolio/photography">WORK</a></li>
+      <li class="{% if url_name == 'portfolio' %} active1 {% endif %}"><a class="text1" href="/products">PRODUCTS</a></li>
+      <li class="{% if url_name == 'post' %} active1 {% endif %}"><a class="text1" href="{%  url 'blog:post' %}">BLOG</a></li>
+      <li class="{% if url_name == 'letsconnect' %} active1 {% endif %}"><a class="text1" href="/letsconnect">LET'S CONNECT</a></li>
+    </ul>
+    <hr class="hrline">
+
+  </header>
+  </div>
+
+  <div class="dave" id="fullpage">
+    <!-- HOME SECTION -->
+    <div class="main_home">
+      <section class="home" id="home">
+        <div class="common">
+          <div class="btn1">
+            <!--<a href="">GET A FREE QUOTE</a>-->
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--AGENCY SECTION -->
+    <div class="main_agency">
+      <section class="agency" id="agency">
+        <div class="container">
+          <div class="text">
+            <p>AGENCY</p>
+          </div>
+          <div class="agency_para">
+            <div class="para">
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos ipsam odit necessitatibus reprehenderit praesentium a
+                eaque accusamus sapiente quia optio animi et dolores id mollitia,
+                fugiat molestiae libero rem molestias veritatis repellat
+                temporibus quibusdam assumenda maxime? Amet unde veritatiit id
+                assumenda ea? Culpa, tenetur iure! Dolorum tempora odio, assumenda
+                eos repellat cum at, cupiditnesciunt vitae distinctio molestias
+                quia consectetur sunt blanditiis expedita. Suscipit autem eligendi
+                ipsam animi officia?
+              </p>
+
+              <a href="/agency">Load More...</a>
+            </div>
+            <div class="img1">
+              <img src="{% static './images/IMG1.png' %}" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="agency_mobile" id="agency_mobile">
+        <div class="container_mobile">
+          <div class="text_mobile">
+            <p>AGENCY</p>
+          </div>
+            <div class="para_mobile">
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos ipsam odit necessitatibus reprehenderit praesentium a
+                eaque accusamus sapiente quia optio animi et dolores id mollitia,
+                fugiat molestiae libero rem molestias veritatis repellat
+                temporibus quibusdam assumenda maxime? Amet unde veritatiit id
+                assumenda ea? Culpa, tenetur iure! Dolorum tempora odio, assumenda
+                eos repellat cum at, cupiditnesciunt vitae distinctio molestias
+                quia consectetur sunt blanditiis expedita. Suscipit autem eligendi
+                ipsam animi officia?
+              </p>
+              <div class="para_btn">
+                <a href="/agency">Load More...</a>
+              </div>
+            </div>
+            <div class="img1_mobile">
+              <img src="{% static './images/IMG1.png' %}" alt="" />
+            </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- EXPERTISE SECTION -->
+    <section class="expertise" id="expertise">
+      <div class="container4">
+        <div class="left4">
+          <p id="exp">EXPERTISE</p>
+        </div>
+        <div class="right4">
+          <div class="carousel owl-carousel">
+            <div class="box">
+              <h1 class="DM">DIGITAL MARKETING</h1>
+              <p>
+                Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia non deleniti ab facilis consectetur fuga.
+                 ipsum dolor sit amet consectetur adipisicing elit. Optio
+                repellendus qui officiis?Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Optio repellendus qui officiis?
+              </p>
+              <a href="/expertise/digital_marketing">EXPLORE MORE</a>
+            </div>
+
+            <!-- To add a New card copy this section -->
+            <div class="box">
+              <h1 class="DM">UI/UX</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                repellendus qui officiis?Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Optio repellendus qui officiis?
+              </p>
+              <a href="/expertise/ui_ux">EXPLORE MORE</a>
+            </div>
+            <!-- END section -->
+
+            <div class="box">
+              <h1 class="DM">WEB DESIGN</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                repellendus qui officiis?Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Optio repellendus qui officiis?
+              </p>
+              <a href="/expertise/web_development/">EXPLORE MORE</a>
+            </div>
+
+
+            <div class="box">
+              <h1 class="DM">LOGO CREATOR</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                repellendus qui officiis?Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Optio repellendus qui officiis?
+              </p>
+              <a href="/expertise/logo_creator">EXPLORE MORE</a>
+            </div>
+
+            <div class="box">
+              <h1 class="DM">SEO</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+                repellendus qui officiis?Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Optio repellendus qui officiis?
+              </p>
+              <a href="/expertise/seo">EXPLORE MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="right4I">
+          <div class="box box1">
+            <h1 class="DM">DIGITAL MARKETING</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+              repellendus qui officiis?Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Optio repellendus qui officiis?
+            </p>
+            <a href="/expertise/digital_marketing">EXPLORE MORE</a>
+          </div>
+
+          <!-- To add a New card copy this section -->
+          <div class="box box2">
+            <h1 class="DM">UI/UX</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+              repellendus qui officiis?Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Optio repellendus qui officiis?
+            </p>
+            <a href="/expertise/ui_ux">EXPLORE MORE</a>
+          </div>
+          <!-- END section -->
+
+          <div class="box box3">
+            <h1 class="DM">WEB DESIGN</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+              repellendus qui officiis?Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Optio repellendus qui officiis?
+            </p>
+            <a href="/expertise/web_development">EXPLORE MORE</a>
+          </div>
+
+          <div class="box box4">
+            <h1 class="DM">LOGO CREATOR</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+              repellendus qui officiis?Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Optio repellendus qui officiis?
+            </p>
+            <a href="/expertise/logo_creator">EXPLORE MORE</a>
+          </div>
+
+          <div class="box box5">
+            <h1 class="DM">SEO</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+              repellendus qui officiis?Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Optio repellendus qui officiis?
+            </p>
+            <a href="/expertise/seo">EXPLORE MORE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--PORTFOLIO SECTION -->
+    <section class="portfolio">
+      <div class="container2">
+        <div class="left2">
+          <p>PORTFOLIO</p>
+        </div>
+        <div class="right2">
+          <div class="carousel1 owl-carousel" id="caro">
+            <div class="card">
+              <div class="box">
+                <a href="/portfolio/photography"><img class="portimg1" src="{% static 'images/sd2.jpg' %}" alt="" /></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="box">
+                <a href="/portfolio/logo_design"><img class="portimg1" src="{% static 'images/sd3.jpg' %}" alt="" /></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="box">
+                <a href="/portfolio/web_design"><img class="portimg1" src="{% static 'images/sd2.jpg' %}" alt="" /></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="box">
+                <a href="/portfolio/vfx"><img class="portimg1" src="{% static 'images/sd3.jpg' %}" alt="" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right2I">
+          <div class="card">
+            <div class="box box1">
+              <a href="/portfolio/photography"><img class="portimg2" src="{% static 'images/sd2.jpg' %}" alt="" /></a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box box2">
+              <a href="/portfolio/logo_design"><img class="portimg2" src="{% static 'images/sd3.jpg' %}" alt="" /></a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box box3">
+              <a href="/portfolio/web_design"><img class="portimg2" src="{% static 'images/sd2.jpg' %}" alt="" /></a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box box4">
+              <a href="/portfolio/vfx"><img class="portimg2" src="{% static 'images/sd3.jpg' %}" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--CLIENT SAY SECTION -->
+    <div class="main_clientsay">
+      <section id="testim" class="testim">
+        <div class="container6">
+          <div class="left6">
+            <p>CLIENT&nbsp;SAY</p>
+          </div>
+          <div class="right6">
+            <div class="wrap">
+              <div class="desktop">
+                <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+              <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
+              </div>
+
+              <ul id="testim-dots" class="dots">
+                <li class="dot active"></li>
+                <!--
+                          -->
+                <li class="dot"></li>
+                <!--
+                          -->
+                <li class="dot"></li>
+                <!--
+                          -->
+                <li class="dot"></li>
+                <!--
+                          -->
+                <li class="dot"></li>
+              </ul>
+              <div id="testim-content" class="cont">
+                <div class="active">
+                  <div class="img">
+                    <img
+                      src="{% static 'images/sd3.jpg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <h2>Lorem P. Ipsum</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                </div>
+
+                <div>
+                  <div class="img">
+                    <img
+                      src="{% static 'images/sd2.jpg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <h2>Mr. Lorem Ipsum</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                </div>
+
+                <div>
+                  <div class="img">
+                    <img
+                      src="{% static 'images/sd4.jpg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <h2>Lorem Ipsum</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                </div>
+
+                <div>
+                  <div class="img">
+                    <img
+                      src="{% static 'images/sd5.jpg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <h2>Lorem De Ipsum</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                </div>
+
+                <div>
+                  <div class="img">
+                    <img src="{% static 'images/sd6.jpg' %}" alt="" />
+                  </div>
+                  <h2>Ms. Lorem R. Ipsum</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                  </p>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="mobile">
+                <span id="left-arrow1" class="arrow left">&#8592</span>
+                <span  id="right-arrow1" class="arrow right">&#8594</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--CONTACT US SECTION -->
+    <div class="main_contact">
+    <section class="contact" id="connect">
+      <div class="container1">
+          <div class="left1">
+              <div class="news">
+                  <h6>LATEST NEWS</h6>
+                  <br>
+                  {% for p in post|slice:":2" %}
+                  <a style="text-decoration:none" href="{% url 'blog:detail' slug=p.Slug %}"><p class="news-title">{{p.Title}}</p></a>
+                  <p>{{p.Tag}}</p>
+                  <br>
+                  {% endfor %}
+
+                  <!-- <p class="news-title">SEO has era of digitisation.</p>
+                  <p>Lorem, ipsum dolor sit amet consectetur
+                      adipisicing elit. Esse similique aliquid
+                      modi delectus officiis dolores?</p> -->
+
+              </div>
+              <div class="expfoot">
+                  <h6>EXPERTISE</h6>
+                  <div class="explist">
+                      <p>DIGITAL MARKETING</p>
+                      <p>DIGITAL MARKETING</p>
+                      <p>DIGITAL MARKETING</p>
+                      <p>DIGITAL MARKETING</p>
+                      <p>DIGITAL MARKETING</p>
+                  </div>
+              </div>
+              <div class="contfoot">
+                  <h6>CONTACT US</h6>
+              </div>
+          </div>
+          <div class="right1">
+              <div class="contactform">
+                  <div class="contacttext">
+                      <h2 id="head1">DO YOU HAVE ANY </h2>
+                      <h2 id="head2">START UP</h2>
+                      <h2 id="head3">IDEA?</h2>
+                  </div>
+                  <div class="contactin">
+                    <form action="" method="POST" id="contact-form">
+                      {% csrf_token %}
+                      <input type="text" name='name' placeholder="Enter your name"><br>
+                      <input type="email" name='email' placeholder="Email Address"><br>
+                      <input type="phone" name='phone' placeholder="Mobile Number"><br>
+                      <input type="text" name='message' placeholder="Query"><br>
+                      <button class="button_submit" type="submit" onclick="submitForm()">Submit</button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    </div>
+  </div>
+</div>
+  <script>
+    // vars
+    "use strict";
+    var testim = document.getElementById("testim"),
+      testimDots = Array.prototype.slice.call(
+        document.getElementById("testim-dots").children
+      ),
+      testimContent = Array.prototype.slice.call(
+        document.getElementById("testim-content").children
+      ),
+      testimLeftArrow = document.getElementById("left-arrow"),
+      testimRightArrow = document.getElementById("right-arrow"),
+      testimLeftArrow1 = document.getElementById("left-arrow1"),
+      testimRightArrow1 = document.getElementById("right-arrow1"),
+      testimSpeed = 4500,
+      currentSlide = 0,
+      currentActive = 0,
+      testimTimer,
+      touchStartPos,
+      touchEndPos,
+      touchPosDiff,
+      ignoreTouch = 30;
+    window.onload = function () {
+      // Testim Script
+      function playSlide(slide) {
+        for (var k = 0; k < testimDots.length; k++) {
+          testimContent[k].classList.remove("active");
+          testimContent[k].classList.remove("inactive");
+          testimDots[k].classList.remove("active");
+        }
+
+        if (slide < 0) {
+          slide = currentSlide = testimContent.length - 1;
+        }
+
+        if (slide > testimContent.length - 1) {
+          slide = currentSlide = 0;
+        }
+
+        if (currentActive != currentSlide) {
+          testimContent[currentActive].classList.add("inactive");
+        }
+        testimContent[slide].classList.add("active");
+        testimDots[slide].classList.add("active");
+
+        currentActive = currentSlide;
+
+        clearTimeout(testimTimer);
+        testimTimer = setTimeout(function () {
+          playSlide((currentSlide += 1));
+        }, testimSpeed);
+      }
+
+      testimLeftArrow.addEventListener("click", function () {
+        playSlide((currentSlide -= 1));
+      });
+
+      testimRightArrow.addEventListener("click", function () {
+        playSlide((currentSlide += 1));
+      });
+      testimLeftArrow1.addEventListener("click", function () {
+        playSlide((currentSlide -= 1));
+      });
+
+      testimRightArrow1.addEventListener("click", function () {
+        playSlide((currentSlide += 1));
+      });
+
+      for (var l = 0; l < testimDots.length; l++) {
+        testimDots[l].addEventListener("click", function () {
+          playSlide((currentSlide = testimDots.indexOf(this)));
+        });
+      }
+
+      playSlide(currentSlide);
+
+      // keyboard shortcuts
+      document.addEventListener("keyup", function (e) {
+        switch (e.keyCode) {
+          case 37:
+            testimLeftArrow.click();
+            break;
+
+          case 39:
+            testimRightArrow.click();
+            break;
+
+          case 39:
+            testimRightArrow.click();
+            break;
+
+          default:
+            break;
+        }
+      });
+      document.addEventListener("keyup", function (e) {
+        switch (e.keyCode) {
+          case 37:
+            testimLeftArrow1.click();
+            break;
+
+          case 39:
+            testimRightArrow1.click();
+            break;
+
+          case 39:
+            testimRightArrow1.click();
+            break;
+
+          default:
+            break;
+        }
+      });
+
+      testim.addEventListener("touchstart", function (e) {
+        touchStartPos = e.changedTouches[0].clientX;
+      });
+
+      testim.addEventListener("touchend", function (e) {
+        touchEndPos = e.changedTouches[0].clientX;
+
+        touchPosDiff = touchStartPos - touchEndPos;
+
+        console.log(touchPosDiff);
+        console.log(touchStartPos);
+        console.log(touchEndPos);
+
+        if (touchPosDiff > 0 + ignoreTouch) {
+          testimLeftArrow.click();
+        } else if (touchPosDiff < 0 - ignoreTouch) {
+          testimRightArrow.click();
+        } else {
+          return;
+        }
+      });
+      testim.addEventListener("touchend", function (e) {
+        touchEndPos = e.changedTouches[0].clientX;
+
+        touchPosDiff = touchStartPos - touchEndPos;
+
+        console.log(touchPosDiff);
+        console.log(touchStartPos);
+        console.log(touchEndPos);
+
+        if (touchPosDiff > 0 + ignoreTouch) {
+          testimLeftArrow1.click();
+        } else if (touchPosDiff < 0 - ignoreTouch) {
+          testimRightArrow1ś.click();
+        } else {
+          return;
+        }
+      });
+    };
+
+    function submitForm() {
+   // Get the first form with the name
+   // Usually the form name is not repeated
+   // but duplicate names are possible in HTML
+   // Therefore to work around the issue, enforce the correct index
+   var frm = document.getElementsById('contact-form')[0];
+   frm.submit(); // Submit the form
+   frm.reset();  // Reset all form data
+   return false; // Prevent page refresh
+
+
+        $(document).on('click', 'ul li', function(){
+            $(this).addClass('active').siblings().removeClass('active')
+        });
+
+
+          $(".active").on("click",function(){
+              $("#menu-btn").prop("checked", false);
+          });
+
+
+}
+
+
+
+  </script>
+  <script src="https://use.fontawesome.com/1744f3f671.js"></script>
+
+  <script src="{% static './js/jquery.fullpage.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+
+  <script src="{% static './js/main.js' %}"></script>
+</body>
+
+</html>
+
